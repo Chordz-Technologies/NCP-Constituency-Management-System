@@ -1,0 +1,14 @@
+@media screen and (min-width:777px) {
+    .nav-link {
+        padding: 18px 0;
+        min-width: 120px;
+    }
+
+    .navbar {
+        padding: 0
+    }
+}
+
+.active {
+    background-color: #2c3344;
+}

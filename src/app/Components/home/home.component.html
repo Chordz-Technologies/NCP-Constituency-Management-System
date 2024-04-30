@@ -1,0 +1,80 @@
+<ngb-carousel [showNavigationArrows]="false" [pauseOnHover]="false" [pauseOnFocus]="false" class="mycaro">
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img src="./assets/slider1.jpg" alt="Random first slide" />
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img src="./assets/slider2.jpg" alt="Random second slide" />
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img src="./assets/slider3.jpg" alt="Random third slide" />
+        </div>
+    </ng-template>
+</ngb-carousel>
+
+<div class="pt-5 pb-5">
+    <div class="container pt-5 pb-5">
+        <div class="row">
+            <div class="col-lg-5 order-lg-1 mb-4 mb-lg-0">
+                <img src="./assets/img.jpg" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-lg-7 order-lg-2">
+                <h2 class="mb-4 heading"><b>About Baramati Taluka</b></h2>
+                <p class="mb-4">Baramati taluka is a taluka in Baramati subdivision of Pune district of state of
+                    Maharashtra in India.<br>
+                    Baramati Tehsil is located in Western Maharashtra. It belongs to Pune Division. It is located 100 km
+                    towards east from district headquarters Pune. 240 km from state capital Mumbai towards east.
+                    Baramati tehsil has its head quarter that is Baramati town. Baramati tehsil lies between 18º04΄ to
+                    18°32΄ north latitudes and 74° 26΄to 74° 69΄ east longitudes. It is located at altitude of 550
+                    meters above means sea level.<br>
+                    There are 2 towns and 116 main villages in Baramati Taluka. Baramati Taluka is bounded by Phaltan
+                    Taluka towards the South, Daund Taluka towards North, Indapur Taluka towards East and Purandhar
+                    Taluka towards West.<br>
+                    The climate of the Baramati Taluka is slightly different in irrigated and non-irrigated area. The
+                    winter season is from December to about the middle of February followed by summer season which last
+                    up to May. June to September is the south-west monsoon season, whereas October and November
+                    constitute the post-monsoon season. The mean minimum temperature is about 12 °C and means
+                    temperature is about 39 °C. The average annual rainfall for the period 2001 to 2012 of Baramati
+                    Tahsil was 502 mm. The rainfall analysis indicates study area is drought area (DPAP).<br>
+                    Baramati taluka has a population of 429,600 according to the 2011 census. Baramati had a literacy
+                    rate of 82.27% and a sex ratio of 943 females per 1000 males. 47,668 (11.10%) are under 7 years of
+                    age. 73,761 (17.17%) lived in urban areas. Scheduled Castes and Scheduled Tribes make up 14.98% and
+                    0.92% of the population respectively.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-2">
+                <button class="btn mb-2" (click)="displayCityInfo('Khadakwasla')"
+                [style.backgroundColor]="selectedCity === 'Khadakwasla' ? 'rgb(240, 123, 27)' : ''"><b>Khadakwasla Taluka</b></button>
+            </div>
+            <div class="col-lg-2">
+                <button class="btn mb-2" (click)="displayCityInfo('Daund')" [style.backgroundColor]="selectedCity === 'Daund' ? 'rgb(240, 123, 27)' : ''"><b>Daund Taluka</b></button>
+            </div>
+            <div class="col-lg-2">
+                <button class="btn mb-2" (click)="displayCityInfo('Indapur')" [style.backgroundColor]="selectedCity === 'Indapur' ? 'rgb(240, 123, 27)' : ''"><b>Indapur Taluka</b></button>
+            </div>
+            <div class="col-lg-2">
+                <button class="btn mb-2" (click)="displayCityInfo('Purandar')" [style.backgroundColor]="selectedCity === 'Purandar' ? 'rgb(240, 123, 27)' : ''"><b>Purandar Taluka</b></button>
+            </div>
+            <div class="col-lg-2">
+                <button class="btn mb-2" (click)="displayCityInfo('Bhor')" [style.backgroundColor]="selectedCity === 'Bhor' ? 'rgb(240, 123, 27)' : ''"><b>Bhor Taluka</b></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container pb-5">
+    <div *ngIf="cityInfo">
+        <h2 class="text-center pb-5"><b>{{ cityInfo.name }}</b></h2>
+        <img [src]="cityInfo.imageUrl" alt="images" width="100%" class="img-fluid">
+        <p class="pt-5">{{ cityInfo.description }}</p>
+    </div>
+</div>

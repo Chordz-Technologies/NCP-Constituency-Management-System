@@ -1,0 +1,57 @@
+mat-sidenav {
+    position: fixed;
+    background-color: #0f1720;
+    width: 260px;
+    height: 100%;
+}
+
+.main {
+    margin-left: 30px;
+    /* min-height: 76vh; */
+}
+
+mat-toolbar {
+    justify-content: space-between;
+    padding: 15px;
+
+}
+
+.box {
+    margin-top: 15px;
+}
+
+mat-icon {
+    margin-left: 15px;
+    color: gray;
+}
+
+.toolbar {
+    text-align: center;
+    background-color: rgb(235, 238, 241);
+}
+
+@media screen and (max-width: 768px) {
+    .toolbar {
+        text-align: center;
+        background-color: rgb(235, 238, 241);
+    }
+}
+
+mat-card {
+    /* margin-top: 20px; */
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+    background-color: rgb(238, 238, 238);
+    /* height: 80px; */
+}
+
+mat-card-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}

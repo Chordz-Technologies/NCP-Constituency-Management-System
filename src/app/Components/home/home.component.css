@@ -1,0 +1,30 @@
+img {
+    height: 550px;
+    width: 100%;
+}
+
+.img-fluid {
+    border-radius: 10px;
+}
+
+.heading {
+    color: #2E3192;
+}
+
+.btn {
+    background: #2E3192;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    width: 100%;
+}
+
+.selected {
+    background: rgb(240, 123, 27);
+}
+
+@media screen and (max-width: 600px) {
+    img {
+        height: 350px;
+        width: 100%;
+    }
+}
