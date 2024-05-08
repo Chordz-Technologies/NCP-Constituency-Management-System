@@ -1,0 +1,55 @@
+<div class="pt-5 pb-5">
+    <div class="container pt-5 pb-5">
+        <div class="card shadow bg-white rounded">
+            <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+                <div *ngIf="response">
+                    <div *ngFor="let question of response.all_questions; let i = index">
+                        <div class="form-group">
+                            <label class="pb-3">{{ 'Question ' + (i + 1) + ' : ' + question.question }}</label>
+                            <div *ngIf="question.question_type === 'radio_button'">
+                                <div *ngFor="let option of question.options">
+                                    <input type="radio" [formControlName]="'q' + question.q_id" [value]="option"
+                                        (change)="onRadioChange(question.q_id, option)"> {{ option }}
+                                </div>
+                            </div>
+                            <div *ngIf="question.question_type === 'checkbox'">
+                                <div *ngFor="let option of question.options">
+                                    <input type="checkbox" [formControlName]="'q' + question.q_id" [value]="option"
+                                        (change)="onCheckboxChange(question.q_id, option, $event)"> {{ option }}
+                                </div>
+                            </div>
+
+                            <!-- <div *ngIf="question.question_type === 'checkbox'">
+                                <div *ngFor="let option of question.options">
+                                    <input type="checkbox" name="question{{ question.q_id }}"
+                                        id="option{{ question.q_id }}_{{ option }}" value="{{ option }}"
+                                        (change)="onCheckboxChange(question.q_id, option, $event)">
+                                    <label for="option{{ question.q_id }}{{ option }}">{{ option }}</label>
+                                    <br>
+                                </div>
+                            </div> -->
+
+                            <div *ngIf="question.question_type === 'text' && question.q_id === 25">
+                                <textarea [formControlName]="'q' + question.q_id" rows="4" cols="50"
+                                    value="{{ currentLocationLink }}" readonly></textarea>
+                                <br>
+                                <button type="button" (click)="saveLocation()">Save Current Location</button>
+                            </div>
+                            <div *ngIf="question.question_type === 'text' && question.q_id !== 25">
+                                <textarea rows="4" cols="50" [formControlName]="'q' + question.q_id" class="p-2" placeholder="Enter Values"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-container">
+                        <button type="submit" class="btn">Submit</button>
+                    </div>
+                </div>
+                <div *ngIf="!response">Loading...</div>
+                <!-- <button (click)="saveLocation()">Save Current Location</button>
+                <p *ngIf="currentLocationLink">
+                    Current Location: <a [href]="currentLocationLink" target="_blank">{{ currentLocationLink }}</a>
+                </p> -->
+            </form>
+        </div>
+    </div>
+</div>

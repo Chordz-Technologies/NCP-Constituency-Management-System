@@ -35748,7 +35748,7 @@ AAAAAACgYgIFAAAAAAAAAAAAAAAAAAAAAABQlb8BUbGWB1S2DwoAAAAASUVORK5CYII=" transform=
               <path id="kasarsai" [ngStyle]="{ fill: getColor(17) }" (click)="openModal(17, modal)" class="st0"
                 d="M184.63,55.16l-0.21-3.64c-0.65-0.91,0.21-7.98,0.21-7.98v-6.06l-4.66,0.06
 		c-3.27-0.7-5.41,4.77-5.41,4.77v4.6l-0.54,6.97l-0.84,3.39l2.29,2.26l4.29-0.89C184.79,57.2,184.63,55.16,184.63,55.16z" />
-              <path id="dattawadi" [ngStyle]="{ fill: getColor(19) }" (click)="openModal(19, modal)" class="st0" d="M195.66,25.56l-0.05,2.57c0.43,3.14-2.14,6.28-2.14,6.28l-8.84,3.07h11.27l1.14-3.64v-6
+              <path id="dalkarwadi" [ngStyle]="{ fill: getColor(19) }" (click)="openModal(19, modal)" class="st0" d="M195.66,25.56l-0.05,2.57c0.43,3.14-2.14,6.28-2.14,6.28l-8.84,3.07h11.27l1.14-3.64v-6
 		L195.66,25.56z" />
               <path id="nere_1_" [ngStyle]="{ fill: getColor(18) }" (click)="openModal(18, modal)" class="st0" d="M184.63,37.48v6.06c0,0-0.86,7.07-0.21,7.98l0.21,3.64l3.27-0.2l2.93-0.17v-1.2l1.07-4.03
 		l2.26-4.66l0.45-0.92l1.29-6.5H184.63z" />
@@ -36610,13 +36610,37 @@ AAAASUVORK5CYII=" transform="matrix(0.24 0 0 0.24 3.84 36.24)"></image>
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body p-5">
+  <div class="modal-body p-5" style="max-height: 80vh; overflow-y: auto">
     <div *ngIf="villageData">
       <p><strong>Village Name:</strong> {{ villageData.villagename }}</p>
+      <p><strong>Total Voters:</strong> {{ villageData.totalvoters }}</p>
+      <p><strong>Male:</strong> {{ villageData.malevoters }}</p>
+      <p><strong>Female:</strong> {{ villageData.femalevoters }}</p>
+      <p><strong>Others:</strong> {{ villageData.othervoters }}</p>
       <p>
-        <strong>Voting Percentage:</strong> {{ villageData.votingpercentage }} %
+        <strong>Voting Percentage:</strong>
+        {{ villageData.votingpercentage }} %
       </p>
       <p><strong>Reason:</strong> {{ villageData.reason }}</p>
+      <p><strong>Ruling party:</strong> {{ villageData.rulingparty }}</p>
+      <img *ngIf="villageData.rulingparty === 'NCP'" src="/assets/ncpLogo.png" alt="NCP Logo"
+        style="height: 50px; width: 50px" />
+      <img *ngIf="villageData.rulingparty === 'Shivsena'" src="/assets/shivsenaLogo.png" alt="Shivsena Logo"
+        style="height: 50px; width: 50px" />
+      <img *ngIf="villageData.rulingparty === 'BJP'" src="/assets/bjpLogo.png" alt="BJP Logo"
+        style="height: 50px; width: 50px" />
+      <img *ngIf="villageData.rulingparty === 'Congress'" src="/assets/congressLogo.png" alt="Congress Logo"
+        style="height: 50px; width: 50px" />
+      <h3>Religion wise Voters</h3>
+      <p><strong>Hindu:</strong> {{ villageData.hindu }}</p>
+      <p><strong>Muslim:</strong> {{ villageData.muslim }}</p>
+      <p><strong>Buddhist:</strong> {{ villageData.buddhist }}</p>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="navigateToVillageDetails(modal)">
+          Read More
+        </button>
+      </div>
     </div>
   </div>
 </ng-template>

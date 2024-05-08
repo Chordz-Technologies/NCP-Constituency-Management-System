@@ -8,8 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'baramatiMap';
 
-  isLoggedIn() {
-    return !localStorage.getItem('admin');
+  isLoggedIn1() {
+    return !localStorage.getItem('Superadmin');
+  }
+
+  isLoggedIn2() {
+    return localStorage.getItem('Superadmin');
   }
 
 

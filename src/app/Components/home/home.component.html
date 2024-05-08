@@ -11,10 +11,19 @@
     </ng-template>
     <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-            <img src="./assets/slider3.jpg" alt="Random third slide" />
+            <img src="./assets/slider3.JPG" alt="Random third slide" />
         </div>
     </ng-template>
 </ngb-carousel>
+
+<!-- <div class="pt-5 pb-5" style="background: #2E3192;">
+    <div class="container">
+        <h3 class="text-center text-white"><b>संगत करावी तरं... स्वच्छ चारित्र्य, निस्वार्थी मन, स्वच्छ विचार, सहकार्य
+                करण्याची भावना, आणि सुख दुःखात धावुन येणारांशी करा. कारण अशी माणसं तुमच्या प्रगतीच्या आड कधीच येत
+                नाहीत..</b></h3>
+        <h5 class="text-center text-white pt-2"><b>- यशवंतराव चव्हाण</b></h5>
+    </div>
+</div> -->
 
 <div class="pt-5 pb-5">
     <div class="container pt-5 pb-5">
@@ -54,19 +63,28 @@
         <div class="row justify-content-center">
             <div class="col-lg-2">
                 <button class="btn mb-2" (click)="displayCityInfo('Khadakwasla')"
-                [style.backgroundColor]="selectedCity === 'Khadakwasla' ? 'rgb(240, 123, 27)' : ''"><b>Khadakwasla Taluka</b></button>
+                    [style.backgroundColor]="selectedCity === 'Khadakwasla' ? 'rgb(240, 123, 27)' : ''"><b>Khadakwasla
+                        Taluka</b></button>
             </div>
             <div class="col-lg-2">
-                <button class="btn mb-2" (click)="displayCityInfo('Daund')" [style.backgroundColor]="selectedCity === 'Daund' ? 'rgb(240, 123, 27)' : ''"><b>Daund Taluka</b></button>
+                <button class="btn mb-2" (click)="displayCityInfo('Daund')"
+                    [style.backgroundColor]="selectedCity === 'Daund' ? 'rgb(240, 123, 27)' : ''"><b>Daund
+                        Taluka</b></button>
             </div>
             <div class="col-lg-2">
-                <button class="btn mb-2" (click)="displayCityInfo('Indapur')" [style.backgroundColor]="selectedCity === 'Indapur' ? 'rgb(240, 123, 27)' : ''"><b>Indapur Taluka</b></button>
+                <button class="btn mb-2" (click)="displayCityInfo('Indapur')"
+                    [style.backgroundColor]="selectedCity === 'Indapur' ? 'rgb(240, 123, 27)' : ''"><b>Indapur
+                        Taluka</b></button>
             </div>
             <div class="col-lg-2">
-                <button class="btn mb-2" (click)="displayCityInfo('Purandar')" [style.backgroundColor]="selectedCity === 'Purandar' ? 'rgb(240, 123, 27)' : ''"><b>Purandar Taluka</b></button>
+                <button class="btn mb-2" (click)="displayCityInfo('Purandar')"
+                    [style.backgroundColor]="selectedCity === 'Purandar' ? 'rgb(240, 123, 27)' : ''"><b>Purandar
+                        Taluka</b></button>
             </div>
             <div class="col-lg-2">
-                <button class="btn mb-2" (click)="displayCityInfo('Bhor')" [style.backgroundColor]="selectedCity === 'Bhor' ? 'rgb(240, 123, 27)' : ''"><b>Bhor Taluka</b></button>
+                <button class="btn mb-2" (click)="displayCityInfo('Bhor')"
+                    [style.backgroundColor]="selectedCity === 'Bhor' ? 'rgb(240, 123, 27)' : ''"><b>Bhor
+                        Taluka</b></button>
             </div>
         </div>
     </div>
@@ -74,7 +92,22 @@
 <div class="container pb-5">
     <div *ngIf="cityInfo">
         <h2 class="text-center pb-5"><b>{{ cityInfo.name }}</b></h2>
-        <img [src]="cityInfo.imageUrl" alt="images" width="100%" class="img-fluid">
+        <img [src]="cityInfo.imageUrl" alt="images" width="100%" height="100%" class="img-fluid">
         <p class="pt-5">{{ cityInfo.description }}</p>
     </div>
 </div>
+
+<!-- <div class="pt-5 pb-5" style="background: #2E3192;">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-lg-5">
+                <img src="./assets/babasaheb-ambedkar.jpg" alt="Image" id="img-fluid">
+            </div>
+            <div class="col-lg-5">
+                <h3 class="text-center text-white pt-3"><b>मी असा धर्म मानतो, जो स्वातंत्र्य, समता आणि बंधुतेची शिकवण
+                        देतो.</b></h3>
+                <h5 class="text-center text-white pt-2"><b>- डॉ. बाबासाहेब आंबेडकर</b></h5>
+            </div>
+        </div>
+    </div>
+</div> -->

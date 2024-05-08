@@ -1,0 +1,33 @@
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    background: #2E3192;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 700;
+    width: 50%;
+    margin: 20px 0;
+}
+
+.card {
+    margin: 0 100px 0 100px;
+    padding: 50px;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        margin: 0 5px 0 5px;
+        padding: 15px;
+    }
+
+    textarea {
+        width: 100%;
+    }
+}

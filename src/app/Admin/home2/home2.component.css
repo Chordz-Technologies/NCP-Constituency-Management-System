@@ -87,12 +87,10 @@ p {
 mat-card-actions {
     text-align: center;
     justify-content: center;
-
-    button {
-
+    /* button {
         color: white;
         background: black;
-    }
+    } */
 }
 
 .chartBox {

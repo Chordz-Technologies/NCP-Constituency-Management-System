@@ -11,11 +11,12 @@ export class SidebarComponent {
   // private sharedService: SharedService
 
   logout() {
-    if (localStorage.getItem('admin')) {
-      localStorage.removeItem('admin');
+    if (localStorage.getItem('adminType')) {
+      localStorage.removeItem('adminType');
     }
     console.log('Logout clicked');
-    localStorage.removeItem('admin');
+    localStorage.removeItem('adminType');
+    localStorage.removeItem('adminId');
     // this.sharedService.setAdminLoggedIn(false);
     this.router.navigate(['']);
   }

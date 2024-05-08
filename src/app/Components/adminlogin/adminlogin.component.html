@@ -1,42 +1,62 @@
-<section class="vh-100">
-  <div class="container-fluid h-custom">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-md-9 col-lg-6 col-xl-5">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
-          alt="Sample image" />
+<div>
+  <mat-card>
+    <mat-card-title>
+      <div class="user ps-5">
+        <img src="../../../assets/ncpLogo.png" alt="logo" height="100px" width="100px" />
+
+        <!-- <p class="mail">admin@gmail.com</p> src="https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png"-->
       </div>
-      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form>
-          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-center">
-            <p class="lead fw-normal pb-5 mb-0 me-3 text-center fw-bold">
-              Only Admin Login
-            </p>
-          </div>
+    </mat-card-title>
+    <mat-card-content>
+      <h2>Login</h2>
+      <form class="example-form" [formGroup]="loginform">
+        <mat-form-field class="example-full-width pt-4">
+          <!-- <mat-label>Admin Name</mat-label> -->
+          <input matInput placeholder="Admin name" id="adminname" formControlName="adminname" required />
+        </mat-form-field>
+        <mat-form-field class="example-full-width pt-3 position-relative">
+          <!-- <mat-label>Admin Password</mat-label> -->
+          <input matInput placeholder="Password" id="adminpassword" type="{{ hidePassword ? 'password' : 'text' }}"
+            formControlName="adminpassword" required />
+          <span class="position-absolute end-0 top-30" style="padding-right: 10px;">
+            <i class="fa" [ngClass]="{'fa-eye-slash': hidePassword, 'fa-eye': !hidePassword}"
+              (click)="togglePasswordVisibility()"></i>
+          </span>
+        </mat-form-field>
+        <div class="mx-auto text-center my-3">
+          <table>
+            <tr>
+              <td><label>Select Profile:</label></td>
 
-          <!-- <div class="divider d-flex align-items-center my-4">
-            <p class="text-center fw-bold mx-3 mb-0">Here</p>
-          </div> -->
+              <td class="checkbox-group ps-2 pt-1">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="option1" name="options" formControlName="options"
+                    value="2" />
+                  <label class="form-check-label" for="option1">Super Admin</label>
+                </div>
+              </td>
 
-          <div class="form-outline mb-4">
-            <label class="form-label" for="form3Example3">User Name</label>
-            <input type="text" id="form3Example3" class="form-control form-control-md" [(ngModel)]="adminname"
-              name="adminname" placeholder="Enter a valid email address" />
-          </div>
-
-          <div class="form-outline mb-3">
-            <label class="form-label" for="form3Example4">Password</label>
-            <input type="password" id="form3Example4" class="form-control form-control-md" [(ngModel)]="adminpassword"
-              name="adminpassword" placeholder="Enter password" />
-          </div>
-
-          <div class="text-center text-lg-center mt-4 pt-2">
-            <button (click)="login()" class="btn btn-primary btn-lg"
-              style="padding-left: 2.5rem; padding-right: 2.5rem">
-              Login
+              <td class="checkbox-group ps-2 pt-1">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="option1" name="options" formControlName="options"
+                    value="1" />
+                  <label class="form-check-label" for="option1">Admin</label>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center" fxLayoutGap="25px">
+          <div class="mx-auto text-center"><br>
+            <button type="submit" class="btn btn-primary" (click)="login()">
+              <b>Login</b>
             </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+          </div><br>
+          <!-- <a routerLink="/register" mat-raised-button color="accent"
+            >Back to Register</a
+          > -->
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

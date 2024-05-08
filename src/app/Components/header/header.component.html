@@ -1,12 +1,23 @@
-<!-- <nav class="navbar navbar-expand-md navbar-dark bg-light"> -->
-  <div class="container text-dark text-center pt-2 pb-2">
-    <h2><b>NCP Constituency Management System</b></h2>
+<div class="container pt-2 pb-1">
+  <div class="row">
+    <div class="lang col-lg-6 col-md-6 col-sm-4">
+      <div id="google_translate_element"></div>
+    </div>
+    <div class="circle col-lg-6 col-md-6 col-sm-4">
+      <button mat-icon-button routerLink="/notifications">
+        <mat-icon>notifications_none</mat-icon>
+      </button>
+    </div>
   </div>
-<!-- </nav> -->
+</div>
+
+<div class="container text-dark text-center pt-1 pb-3">
+  <h1><b>NCP Constituency Management System</b></h1>
+</div>
 
 <nav class="navbar navbar-expand-md navbar-dark sticky-top fixed-top bg-dark">
   <div class="container">
-    <a class="navbar-brand d-md-none d-xs-block py-3" href="#">
+    <a class="navbar-brand d-md-none d-xs-block" href="#">
       <img src="./assets/ncpLogo.png" class="rounded-circle" height="40" alt="Company Logo" />
     </a>
     <button class="navbar-toggler" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
@@ -18,36 +29,47 @@
     <div class="collapse navbar-collapse" [ngbCollapse]="isNavbarCollapsed" id="navbarNavDropdown">
       <ul class="navbar-nav mx-auto text-center">
         <li class="nav-item">
-          <a class="nav-link mx-2" aria-current="page" routerLink="" [routerLinkActive]="['active']"
+          <a class="nav-link" aria-current="page" routerLink="" [routerLinkActive]="['active']"
             [routerLinkActiveOptions]="{ exact: true }"><b>Home</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2" aria-current="page" routerLink="baramatiMap"
-            [routerLinkActive]="['active']"><b>Baramati Map</b></a>
+          <a class="nav-link" aria-current="page" routerLink="baramatiMap"
+            [routerLinkActive]="['active']"><b>Baramati</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2" aria-current="page" routerLink="khadkwaslaMap"
-            [routerLinkActive]="['active']"><b>Khadakwasla Map</b></a>
+          <a class="nav-link" aria-current="page" routerLink="khadkwaslaMap"
+            [routerLinkActive]="['active']"><b>Khadakwasla</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2" aria-current="page" routerLink="daundMap" [routerLinkActive]="['active']"><b>Daund
-              Map</b></a>
+          <a class="nav-link" aria-current="page" routerLink="daundMap" [routerLinkActive]="['active']"><b>Daund</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2" aria-current="page" routerLink="indapurMap"
-            [routerLinkActive]="['active']"><b>Indapur Map</b></a>
+          <a class="nav-link" aria-current="page" routerLink="indapurMap"
+            [routerLinkActive]="['active']"><b>Indapur</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2" aria-current="page" routerLink="purandarMap"
-            [routerLinkActive]="['active']"><b>Purandar Map</b></a>
+          <a class="nav-link" aria-current="page" routerLink="purandarMap"
+            [routerLinkActive]="['active']"><b>Purandar</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2" aria-current="page" routerLink="bhorMap" [routerLinkActive]="['active']"><b>Bhor
-              Map</b></a>
+          <a class="nav-link" aria-current="page" routerLink="bhorMap" [routerLinkActive]="['active']"><b>Bhor</b></a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link mx-2 btn rounded-0 btn-danger" routerLink="adminLogin"><b>Only Admin Login</b></a>
+          <a class="nav-link" aria-current="page" routerLink="surveyForm" [routerLinkActive]="['active']"><b>Survey
+              Form</b></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="karykartaForm"
+            [routerLinkActive]="['active']"><b>Karykarta Form</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="knowledgeCenter"
+            [routerLinkActive]="['active']"><b>Knowledge Center</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn rounded-0 btn-danger" routerLink="adminLogin"><b>Admin Login</b></a>
         </li>
       </ul>
     </div>

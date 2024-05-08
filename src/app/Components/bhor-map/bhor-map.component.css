@@ -13,6 +13,7 @@ svg path {
 
 /* Change SVG path color on hover */
 svg path:hover {
+    /* fill: #054752; */
     transition: 0.6s;
     cursor: pointer;
     stroke: #000000;

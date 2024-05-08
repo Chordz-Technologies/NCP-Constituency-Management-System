@@ -1,0 +1,36 @@
+a {
+    color: rgb(240, 123, 27);
+}
+
+p {
+    color: white;
+}
+
+li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: white
+}
+
+li a.active {
+    color: rgb(240, 123, 27);
+}
+
+li a:hover {
+    color: rgb(240, 123, 27);
+}
+
+.list {
+    padding-top: 40px;
+}
+
+h5 {
+    line-height: 1.8;
+
+}
+
+@media screen and (max-width: 600px) {
+    .list {
+        padding-top: 0;
+    }
+}

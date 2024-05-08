@@ -1,13 +1,8 @@
 <div class="navbar">
   <div class="user ps-5">
     <!-- https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png -->
-    <img
-      src="../../../assets/ncpLogo.png"
-      alt="ncpLogo"
-      height="150px"
-      width="150px"
-      [routerLink]="['/adminhome/dashboard']"
-    />
+    <img src="../../../assets/ncpLogo.png" alt="ncpLogo" height="150px" width="150px"
+      [routerLink]="['/adminhome/dashboard']" />
     <h4 class="name">Admin</h4>
   </div>
   <div class="menu">
@@ -15,68 +10,54 @@
       <span>Dashboard</span>
     </div>
     <div class="menu-item">
-      <button
-        mat-button
-        class="menu-button"
-        [routerLinkActive]="['active']"
-        [routerLink]="['/adminhome/dashboard']"
-      >
+      <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/adminhome/dashboard']">
         <mat-icon>dashboard</mat-icon>
         <span>Home</span>
       </button>
-      <button
-        mat-button
-        class="menu-button"
-        [routerLinkActive]="['active']"
-        [routerLink]="['/adminhome/baramati_village_data']"
-      >
+      <button mat-button class="menu-button" [routerLinkActive]="['active']"
+        [routerLink]="['/adminhome/baramati_village_data']">
         <mat-icon>dashboard</mat-icon>
         <span>Baramati Map</span>
       </button>
-      <button
-        mat-button
-        class="menu-button"
-        [routerLinkActive]="['active']"
-        [routerLink]="['/adminhome/khadakwasla_village_data']"
-      >
+      <button mat-button class="menu-button" [routerLinkActive]="['active']"
+        [routerLink]="['/adminhome/khadakwasla_village_data']">
         <mat-icon>dashboard</mat-icon>
         <span>Khadakwasla Map</span>
       </button>
-      <button
-        mat-button
-        class="menu-button"
-        [routerLinkActive]="['active']"
-        [routerLink]="['/adminhome/duand_village_data']"
-      >
+      <button mat-button class="menu-button" [routerLinkActive]="['active']"
+        [routerLink]="['/adminhome/daund_village_data']">
         <mat-icon>dashboard</mat-icon>
         <span>Daund Map</span>
       </button>
-      <button
-        mat-button
-        class="menu-button"
-        [routerLinkActive]="['active']"
-        [routerLink]="['/adminhome/indapur_village_data']"
-      >
+      <button mat-button class="menu-button" [routerLinkActive]="['active']"
+        [routerLink]="['/adminhome/indapur_village_data']">
         <mat-icon>dashboard</mat-icon>
         <span>Indapur Map</span>
       </button>
-      <button
-        mat-button
-        class="menu-button"
-        [routerLinkActive]="['active']"
-        [routerLink]="['/adminhome/purandar_village_data']"
-      >
+      <button mat-button class="menu-button" [routerLinkActive]="['active']"
+        [routerLink]="['/adminhome/purandar_village_data']">
         <mat-icon>dashboard</mat-icon>
         <span>Purandar Map</span>
       </button>
-      <button
-        mat-button
-        class="menu-button"
-        [routerLinkActive]="['active']"
-        [routerLink]="['/adminhome/bhor_village_data']"
-      >
+      <button mat-button class="menu-button" [routerLinkActive]="['active']"
+        [routerLink]="['/adminhome/bhor_village_data']">
         <mat-icon>dashboard</mat-icon>
         <span>Bhor Map</span>
+      </button>
+      <button mat-button class="menu-button" [routerLinkActive]="['active']"
+        [routerLink]="['/adminhome/surveyFormDetails']">
+        <mat-icon>dashboard</mat-icon>
+        <span>Survey Form</span>
+      </button>
+      <button mat-button class="menu-button" [routerLinkActive]="['active']"
+        [routerLink]="['/adminhome/karykartaFormDetails']">
+        <mat-icon>dashboard</mat-icon>
+        <span>Karykarta Form</span>
+      </button>
+      <button mat-button class="menu-button" [routerLinkActive]="['active']"
+        [routerLink]="['/adminhome/karykarta-details']">
+        <mat-icon>dashboard</mat-icon>
+        <span>Karykarta Details</span>
       </button>
       <button mat-button class="menu-button" (click)="logout()">
         <mat-icon>logout</mat-icon>

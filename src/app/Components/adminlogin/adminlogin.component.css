@@ -1,0 +1,41 @@
+mat-card {
+    /* margin-top: 30px; */
+    background-color: lightgray;
+
+}
+
+img {
+    /* margin-top: 8px; */
+    margin-right: 45px;
+    width: 120px;
+    height: 120px;
+}
+
+mat-card-title {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+    color: black;
+}
+mat-card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 80%;
+    margin: auto;
+}
+.btn {
+    width: 30%;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}

@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from 'environment';
-import { ServiceService } from '../Service/service.service';
+import { ServiceService } from '../../Service/service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bhor-map',
@@ -24,7 +25,10 @@ export class BhorMapComponent {
   regionData: any; // Variable to store region data
   isModalOpen = false; // Flag to track if modal is open or not
 
-  constructor(private http: HttpClient, private modalService: NgbModal, private dataService: ServiceService) {}
+  constructor(private http: HttpClient, private modalService: NgbModal, private dataService: ServiceService, private router: Router) {
+
+
+  }
 
   ngOnInit() {
     this.fetchSvgInfo();
@@ -38,6 +42,7 @@ export class BhorMapComponent {
       // this.updateMapColors();
     });
   }
+
 
   getColor(villageId: number): any {
     const village = this.svgInfo.find(item => item.id === villageId);
@@ -59,6 +64,9 @@ export class BhorMapComponent {
     }
   }
 
+
+
+
   openModal(regionId: number, content: any) {
     this.http.get<any>(`${this.url}/bhorvillagedetails/${regionId}/`)
       .subscribe(data => {
@@ -76,4 +84,12 @@ export class BhorMapComponent {
         }
       });
   }
+
+  navigateToVillageDetails(modal: any) {
+    if (this.villageData) {
+      modal.dismiss('Cross click'); // Dismiss the modal
+      this.router.navigate(['/bhor_village_information', this.villageData.id]);
+    }
+  }
+
 }
