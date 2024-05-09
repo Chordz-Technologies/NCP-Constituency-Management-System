@@ -41,8 +41,8 @@ export class villageData_model {
     savidhanik_position5!: string;
     political_influence5!: string;
     village_specs!: string;
-    winner_votes!: string;
-    runnerup_votes!: string;
+    winner_votes!: number;
+    runnerup_votes!: number;
     hindu!: number;
     muslim!: number;
     buddhist!: number;

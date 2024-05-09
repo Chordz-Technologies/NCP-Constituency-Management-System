@@ -44,7 +44,7 @@ export class SurveyFormComponent implements OnInit {
       this.toastr.error('Please fill all the required fields.', 'Error');
       return;
     }
-    
+
     const formData = this.transformFormData(this.dynamicForm.value);
     this.service.submitSurveyFormData(formData).subscribe(response => {
       this.toastr.success('Survey Form Added Successfully!', 'Success');

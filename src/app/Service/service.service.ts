@@ -207,8 +207,6 @@ export class ServiceService {
     return this.http.post<any>(`${this.url}/addadminmessage/`, data);
   }
 
-
-
   // Complaint Messages
 
   postComplaintMessages(data: any): Observable<any> {

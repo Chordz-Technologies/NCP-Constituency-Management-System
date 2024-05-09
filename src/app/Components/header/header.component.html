@@ -35,46 +35,50 @@
       <ul class="navbar-nav mx-auto text-center">
         <li class="nav-item">
           <a class="nav-link" aria-current="page" routerLink="" [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }"><b>Home</b></a>
+            [routerLinkActiveOptions]="{ exact: true }" (click)="isNavbarCollapsed = true"><b>Home</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="baramatiMap"
-            [routerLinkActive]="['active']"><b>Baramati</b></a>
+          <a class="nav-link" aria-current="page" routerLink="baramatiMap" [routerLinkActive]="['active']"
+            (click)="isNavbarCollapsed = true"><b>Baramati</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="khadkwaslaMap"
-            [routerLinkActive]="['active']"><b>Khadakwasla</b></a>
+          <a class="nav-link" aria-current="page" routerLink="khadkwaslaMap" [routerLinkActive]="['active']"
+            (click)="isNavbarCollapsed = true"><b>Khadakwasla</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="daundMap" [routerLinkActive]="['active']"><b>Daund</b></a>
+          <a class="nav-link" aria-current="page" routerLink="daundMap" [routerLinkActive]="['active']"
+            (click)="isNavbarCollapsed = true"><b>Daund</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="indapurMap"
-            [routerLinkActive]="['active']"><b>Indapur</b></a>
+          <a class="nav-link" aria-current="page" routerLink="indapurMap" [routerLinkActive]="['active']"
+            (click)="isNavbarCollapsed = true"><b>Indapur</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="purandarMap"
-            [routerLinkActive]="['active']"><b>Purandar</b></a>
+          <a class="nav-link" aria-current="page" routerLink="purandarMap" [routerLinkActive]="['active']"
+            (click)="isNavbarCollapsed = true"><b>Purandar</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="bhorMap" [routerLinkActive]="['active']"><b>Bhor</b></a>
+          <a class="nav-link" aria-current="page" routerLink="bhorMap" [routerLinkActive]="['active']"
+            (click)="isNavbarCollapsed = true"><b>Bhor</b></a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="surveyForm" [routerLinkActive]="['active']"><b>Survey
+          <a class="nav-link" aria-current="page" routerLink="surveyForm" [routerLinkActive]="['active']"
+            (click)="isNavbarCollapsed = true"><b>Survey
               Form</b></a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="karykartaForm"
-            [routerLinkActive]="['active']"><b>Karykarta Form</b></a>
+          <a class="nav-link" aria-current="page" routerLink="karykartaForm" [routerLinkActive]="['active']"
+            (click)="isNavbarCollapsed = true"><b>Karykarta Form</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="knowledgeCenter"
-            [routerLinkActive]="['active']"><b>Knowledge Center</b></a>
+          <a class="nav-link" aria-current="page" routerLink="knowledgeCenter" [routerLinkActive]="['active']"
+            (click)="isNavbarCollapsed = true"><b>Knowledge Center</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn rounded-0 btn-danger" routerLink="adminLogin"><b>Admin Login</b></a>
+          <a class="nav-link btn rounded-0 btn-danger" routerLink="adminLogin"
+            (click)="isNavbarCollapsed = true"><b>Admin Login</b></a>
         </li>
       </ul>
     </div>
