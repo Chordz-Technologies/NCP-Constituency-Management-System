@@ -13,34 +13,55 @@ import { ServiceService } from 'src/app/Service/service.service';
 export class NotificationsPageComponent {
   public dataLoaded: boolean = false;
 
-  displayedColumns: string[] = ['Name', 'Birth', 'contact'];
+  displayedColumns: string[] = ['Name', 'Birthdate', 'Contact'];
   dataSource!: MatTableDataSource<any>;
+  dataSource1!: MatTableDataSource<any>;
+  displayedColumns1: string[] = ['ID', 'Message For', 'Message'];
+
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  // village: any;
+  apiResponse: any;
 
   constructor(private service: ServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    this.getVillageList();
+    this.getBirthdayList();
+    this.getAdminMessage();
   }
 
-  getVillageList() {
+  getBirthdayList() {
     this.service.karykartaBirthdays().subscribe({
       next: (res: any) => {
         this.dataLoaded = true;
-        // console.log('Products : ', res.all_data);
-        // this.village = res.data;
         this.dataSource = new MatTableDataSource(res.data);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       },
       error: (err: any) => {
-        alert(err);
+        console.log(err);
       }
     });
   }
+
+  getAdminMessage() {
+    this.service.adminMessages().subscribe({
+      next: (res: any) => {
+        // this.apiResponse = res;
+        this.dataLoaded = true;
+        this.dataSource1 = new MatTableDataSource(res.all_messages);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    });
+  }
+
+  // getObjectValues(obj: any): any[] {
+  //   return Object.values(obj);
+  // }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

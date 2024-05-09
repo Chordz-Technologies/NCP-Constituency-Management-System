@@ -1,34 +1,31 @@
 <mat-card style="margin-bottom: 8px">
-  <mat-card-title
-    ><i class="fa-solid fa-boxes-stacked"></i>
+  <mat-card-title><i class="fa-solid fa-boxes-stacked"></i>
     <b>Villages</b>
   </mat-card-title>
 </mat-card>
 
 <div class="main-div">
   <mat-form-field style="padding-right: 20px; width: 35%">
-    <mat-label class="text-primary"
-      ><mat-icon>search</mat-icon>Search</mat-label
-    >
+    <mat-label class="text-primary"><mat-icon>search</mat-icon>Search</mat-label>
     <input matInput (keyup)="applyFilter($event)" #input />
   </mat-form-field>
 
-  <!-- <button
-              mat-raised-button
-              color="primary"
-              style="width: 29%; padding: 35px; float: right"
-              routerLink="/adminhome/addAdminproducts"
-            >
-              Add new Product
-            </button> -->
-
   <div *ngIf="dataLoaded" class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Action</b>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <button class="text-primary" (click)="edit(row.id)">
+            <mat-icon color="primary">edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header><b>ID</b></th>
         <td mat-cell *matCellDef="let row">{{ row.id }}</td>
       </ng-container>
-
       <ng-container matColumnDef="villageName">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
           <b>Village Name </b>
@@ -55,8 +52,6 @@
         </th>
         <td mat-cell *matCellDef="let row">{{ row.causes }}</td>
       </ng-container>
-      
-
       <ng-container matColumnDef="totalvoters">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
           <b>Total Voters</b>
@@ -81,6 +76,42 @@
         </th>
         <td mat-cell *matCellDef="let row">{{ row.othervoters }}</td>
       </ng-container>
+      <!-- <ng-container matColumnDef="village_specs">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Village Specs</b>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.village_specs }}</td>
+      </ng-container> -->
+      <ng-container matColumnDef="winner_votes">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Winner Votes</b>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.winner_votes }}</td>
+      </ng-container>
+      <ng-container matColumnDef="runnerup_votes">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Runnerup Votes</b>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.runnerup_votes }}</td>
+      </ng-container>
+      <ng-container matColumnDef="hindu">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Hindu</b>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.hindu }}</td>
+      </ng-container>
+      <ng-container matColumnDef="muslim">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Muslim</b>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.muslim }}</td>
+      </ng-container>
+      <ng-container matColumnDef="buddhist">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Buddhist</b>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.buddhist }}</td>
+      </ng-container>
       <ng-container matColumnDef="rulingparty">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
           <b>Ruling Party</b>
@@ -93,7 +124,7 @@
         </th>
         <td mat-cell *matCellDef="let row">{{ row.total_booths }}</td>
       </ng-container>
-      <ng-container matColumnDef="boothleader_name">
+      <!-- <ng-container matColumnDef="boothleader_name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
           <b>Boothleader Name</b>
         </th>
@@ -123,12 +154,6 @@
         </th>
         <td mat-cell *matCellDef="let row">{{ row.politicalleader_name1 }}</td>
       </ng-container>
-      <ng-container matColumnDef="politicalleader_party1">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Political Leader Party 1</b>
-        </th>
-        <td mat-cell *matCellDef="let row">{{ row.politicalleader_party1 }}</td>
-      </ng-container>
       <ng-container matColumnDef="political_position1">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
           <b>Political Position 1</b>
@@ -147,18 +172,11 @@
         </th>
         <td mat-cell *matCellDef="let row">{{ row.political_influence1 }}</td>
       </ng-container>
-
       <ng-container matColumnDef="politicalleader_name2">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
           <b>Political Leader Name 2</b>
         </th>
         <td mat-cell *matCellDef="let row">{{ row.politicalleader_name2 }}</td>
-      </ng-container>
-      <ng-container matColumnDef="politicalleader_party2">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Political Leader Party 2</b>
-        </th>
-        <td mat-cell *matCellDef="let row">{{ row.politicalleader_party2 }}</td>
       </ng-container>
       <ng-container matColumnDef="political_position2">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
@@ -184,12 +202,6 @@
         </th>
         <td mat-cell *matCellDef="let row">{{ row.politicalleader_name3 }}</td>
       </ng-container>
-      <ng-container matColumnDef="politicalleader_party3">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Political Leader Party 3</b>
-        </th>
-        <td mat-cell *matCellDef="let row">{{ row.politicalleader_party3 }}</td>
-      </ng-container>
       <ng-container matColumnDef="political_position3">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
           <b>Political Position 3</b>
@@ -213,12 +225,6 @@
           <b>Political Leader Name 4</b>
         </th>
         <td mat-cell *matCellDef="let row">{{ row.politicalleader_name4 }}</td>
-      </ng-container>
-      <ng-container matColumnDef="politicalleader_party4">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Political Leader Party 4</b>
-        </th>
-        <td mat-cell *matCellDef="let row">{{ row.politicalleader_party4 }}</td>
       </ng-container>
       <ng-container matColumnDef="political_position4">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
@@ -244,12 +250,6 @@
         </th>
         <td mat-cell *matCellDef="let row">{{ row.politicalleader_name5 }}</td>
       </ng-container>
-      <ng-container matColumnDef="politicalleader_party5">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Political Leader Party 5</b>
-        </th>
-        <td mat-cell *matCellDef="let row">{{ row.politicalleader_party5 }}</td>
-      </ng-container>
       <ng-container matColumnDef="political_position5">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
           <b>Political Position 5</b>
@@ -267,22 +267,45 @@
           <b>Political Influence 5</b>
         </th>
         <td mat-cell *matCellDef="let row">{{ row.political_influence5 }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="action">
+      </ng-container> -->
+      <!-- <ng-container matColumnDef="village_specs">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Action</b>
+          <b>Village Specs</b>
         </th>
-        <td mat-cell *matCellDef="let row">
-          <button class="text-primary" (click)="edit(row.id)">
-            <mat-icon color="primary">edit</mat-icon>
-          </button>
-          <!-- &nbsp;&nbsp;
-                        <button (click)="showUsers(row.businessid)">
-                          <mat-icon color="primary">people</mat-icon>
-                        </button> -->
-        </td>
+        <td mat-cell *matCellDef="let row">{{ row.village_specs }}</td>
       </ng-container>
+      <ng-container matColumnDef="winner_votes">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Winner Votes</b>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.winner_votes }}</td>
+      </ng-container>
+      <ng-container matColumnDef="runnerup_votes">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Runnerup Votes</b>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.runnerup_votes }}</td>
+      </ng-container>
+      <ng-container matColumnDef="hindu">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Hindu</b>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.hindu }}</td>
+      </ng-container>
+      <ng-container matColumnDef="muslim">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Muslim</b>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.muslim }}</td>
+      </ng-container>
+      <ng-container matColumnDef="buddhist">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Buddhist</b>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.buddhist }}</td>
+      </ng-container> -->
+
+      
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
@@ -296,8 +319,3 @@
     </table>
   </div>
 </div>
-<!-- <ng-template #loading>
-                <div class="spinner mx-auto">
-                  <mat-spinner diameter="40"></mat-spinner>
-                </div>
-              </ng-template> -->

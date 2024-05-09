@@ -12,8 +12,8 @@ export class ServiceService {
 
   constructor(private http: HttpClient) { }
 
-   // Login API
-   loginpost(data: any): Observable<any> {
+  // Login API
+  loginpost(data: any): Observable<any> {
     return this.http.post<any>(`${this.url}/adminlogin/`, data);
   }
 
@@ -36,7 +36,7 @@ export class ServiceService {
   // }
 
   updateVillageById(id: number, data: any): Observable<any> {
-    return this.http.put<any>(`${this.url}/updatedata/${id}/`, data);
+    return this.http.put<any>(`${this.url}/updatedata/${id}`, data);
   }
 
   // Khadakwasla
@@ -58,7 +58,7 @@ export class ServiceService {
   // }
 
   updateKhadakwaslaById(id: number, data: any): Observable<any> {
-    return this.http.put<any>(`${this.url}/updatekdata/${id}/`, data);
+    return this.http.put<any>(`${this.url}/updatekdata/${id}`, data);
   }
 
   // Daund
@@ -80,7 +80,7 @@ export class ServiceService {
   // }
 
   updateDaundById(id: number, data: any): Observable<any> {
-    return this.http.put<any>(`${this.url}/updateddata/${id}/`, data);
+    return this.http.put<any>(`${this.url}/updatedaunddata/${id}`, data);
   }
 
   // Indapur
@@ -102,7 +102,7 @@ export class ServiceService {
   // }
 
   updateIndapurById(id: number, data: any): Observable<any> {
-    return this.http.put<any>(`${this.url}/updateindapurdata/${id}/`, data);
+    return this.http.put<any>(`${this.url}/updateindapurdata/${id}`, data);
   }
 
   // Purandar
@@ -124,7 +124,7 @@ export class ServiceService {
   // }
 
   updatePurandarById(id: number, data: any): Observable<any> {
-    return this.http.put<any>(`${this.url}/updatepurandardata/${id}/`, data);
+    return this.http.put<any>(`${this.url}/updatepurandardata/${id}`, data);
   }
 
   // Bhor
@@ -146,7 +146,7 @@ export class ServiceService {
   // }
 
   updateBhorById(id: number, data: any): Observable<any> {
-    return this.http.put<any>(`${this.url}/updatebhordata/${id}/`, data);
+    return this.http.put<any>(`${this.url}/updatebhordata/${id}`, data);
   }
 
   // Survey Form
@@ -197,5 +197,25 @@ export class ServiceService {
 
   karykartaBirthdays(): Observable<any> {
     return this.http.get<any>(`${this.url}/kbirthdays/`);
+  }
+
+  adminMessages(): Observable<any> {
+    return this.http.get<any>(`${this.url}/alladminmessages/`);
+  }
+
+  postAdminMessages(data: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/addadminmessage/`, data);
+  }
+
+
+
+  // Complaint Messages
+
+  postComplaintMessages(data: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/addfeedback/`, data);
+  }
+
+  viewComplaintMessages(): Observable<any> {
+    return this.http.get<any>(`${this.url}/allfeedbacks/`);
   }
 }

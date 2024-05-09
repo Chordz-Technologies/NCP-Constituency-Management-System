@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent {
   constructor(private router: Router,) { }
-  // private sharedService: SharedService
+  isAdmin: boolean = localStorage.getItem('adminType') === 'Admin';
+  isSuperAdmin: boolean = localStorage.getItem('adminType') === 'Superadmin';
 
   logout() {
     if (localStorage.getItem('adminType')) {

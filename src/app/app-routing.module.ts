@@ -39,6 +39,11 @@ import { NotificationsPageComponent } from './Components/notifications-page/noti
 import { KarykartaFormDetailsComponent } from './Admin/karykarta-form-details/karykarta-form-details.component';
 import { EditKarykartaFormComponent } from './Admin/edit-karykarta-form/edit-karykarta-form.component';
 import { AddNewKarykartaQuestionComponent } from './Admin/add-new-karykarta-question/add-new-karykarta-question.component';
+import { SurveyDetailsComponent } from './Admin/survey-details/survey-details.component';
+import { AddComplaintMessagesComponent } from './Components/add-complaint-messages/add-complaint-messages.component';
+import { ViewComplaintsComponent } from './Admin/view-complaints/view-complaints.component';
+import { KnowledgeCenterComponent } from './Components/knowledge-center/knowledge-center.component';
+import { AddSuperadminMessageComponent } from './Admin/add-superadmin-message/add-superadmin-message.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -57,6 +62,9 @@ const routes: Routes = [
   { path: 'khadakwasla_village_information/:id', component: KhadakwaslaVillageInfoPageComponent },
   { path: 'purandar_village_information/:id', component: PurandarVillageInfoPageComponent },
   { path: 'notifications', component: NotificationsPageComponent },
+  { path: 'add-complaint-messages', component: AddComplaintMessagesComponent },
+  { path: 'knowledgeCenter', component: KnowledgeCenterComponent },
+
   {
     path: 'adminhome', component: AdminhomeComponent, canActivate: [AuthGuard],
     children: [
@@ -80,6 +88,10 @@ const routes: Routes = [
       { path: 'karykartaFormDetails', component: KarykartaFormDetailsComponent },
       { path: 'edit_karykartaForm/:id', component: EditKarykartaFormComponent },
       { path: 'addNewKarykartaQuestion', component: AddNewKarykartaQuestionComponent },
+      { path: 'survey-details', component: SurveyDetailsComponent },
+      { path: 'viewComplaints', component: ViewComplaintsComponent },
+      { path: 'add-superadmin-message', component: AddSuperadminMessageComponent }
+
     ]
   },
   { path: 'adminLogin', component: AdminloginComponent },

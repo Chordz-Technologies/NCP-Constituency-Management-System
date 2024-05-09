@@ -1,0 +1,22 @@
+<mat-card style="margin-bottom: 8px">
+  <mat-card-title><i class="fa-solid fa-boxes-stacked"></i>
+    <b>Questions and Responses</b>
+  </mat-card-title>
+</mat-card><br>
+
+<div class="main-div mat-elevation-z8">
+  <!-- <h2>Questions and Responses</h2> -->
+  <table mat-table [dataSource]="dataSource">
+    <!-- Generate table headers -->
+    <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef>
+        <textarea matInput rows="2" readonly> {{ column }}</textarea>
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+    </ng-container>
+
+    <!-- Set column definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

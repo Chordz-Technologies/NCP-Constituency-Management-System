@@ -14,8 +14,7 @@ export class BaramatiDetailsComponent {
 
   public dataLoaded: boolean = false;
 
-
-  displayedColumns: string[] = ['action', 'id', 'villageName', 'votingPercentage', 'reason', 'causes', 'totalvoters', 'malevoters', 'femalevoters', 'othervoters', 'village_specs', 'winner_votes', 'runnerup_votes', 'hindu', 'muslim', 'buddhist', 'rulingparty', 'total_booths', 'boothleader_name', 'boothleader_no1', 'boothleader_no2', 'boothleader_address', 'politicalleader_name1', 'political_position1', 'savidhanik_position1', 'political_influence1', 'politicalleader_name2', 'political_position2', 'savidhanik_position2', 'political_influence2', 'politicalleader_name3', 'political_position3', 'savidhanik_position3', 'political_influence3', 'politicalleader_name4', 'political_position4', 'savidhanik_position4', 'political_influence4', 'politicalleader_name5', 'political_position5', 'savidhanik_position5', 'political_influence5'];
+  displayedColumns: string[] = ['action', 'id', 'villageName', 'votingPercentage', 'reason', 'causes', 'totalvoters', 'malevoters', 'femalevoters', 'othervoters', 'winner_votes', 'runnerup_votes', 'hindu', 'muslim', 'buddhist', 'rulingparty', 'total_booths'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

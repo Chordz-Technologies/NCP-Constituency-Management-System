@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ServiceService } from '../../Service/service.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-survey-form',
@@ -13,7 +14,7 @@ export class SurveyFormComponent implements OnInit {
   currentLocationLink: string | undefined;
   selectedOptions: { [key: number]: string[] } = {}; // Define selectedOptions property
 
-  constructor(private formBuilder: FormBuilder, private service: ServiceService) { }
+  constructor(private formBuilder: FormBuilder, private service: ServiceService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.dynamicForm = this.formBuilder.group({});
@@ -31,7 +32,7 @@ export class SurveyFormComponent implements OnInit {
     if (this.response && this.response.all_questions) {
       this.response.all_questions.forEach((question: any) => {
         if (question.question_type === 'radio_button' || question.question_type === 'text' || question.question_type === 'checkbox') {
-          const control = new FormControl();
+          const control = new FormControl('', Validators.required); // Add Validators.required to make the field compulsory
           this.dynamicForm.addControl('q' + question.q_id, control);
         }
       });
@@ -39,12 +40,15 @@ export class SurveyFormComponent implements OnInit {
   }
 
   onSubmit() {
+    if (this.dynamicForm.invalid) {
+      this.toastr.error('Please fill all the required fields.', 'Error');
+      return;
+    }
+    
     const formData = this.transformFormData(this.dynamicForm.value);
-    console.log(formData);
-
-    // Send form data to backend
     this.service.submitSurveyFormData(formData).subscribe(response => {
-      console.log('Form data sent to backend:', response);
+      this.toastr.success('Survey Form Added Successfully!', 'Success');
+      this.dynamicForm.reset();
     }, (error) => {
       console.error('Error sending form data to backend:', error);
     });

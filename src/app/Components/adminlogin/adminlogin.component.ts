@@ -57,7 +57,7 @@ export class AdminloginComponent {
         if (result.message === 'Valid User' && result.admin_type === 'Superadmin') {
           const adminId = result.admin_ID;
           // const status = result.status;
-          this.router.navigate(['/adminhome/dashboard']);
+          this.router.navigate(['/adminhome/viewComplaints']);
           this.toastr.success('Login successful as a Superadmin!', 'Success');
           const admin_type: string = 'Superadmin';
           this.authService.login(admin_type, adminId);

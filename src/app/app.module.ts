@@ -59,6 +59,11 @@ import { NotificationsPageComponent } from './Components/notifications-page/noti
 import { KarykartaFormDetailsComponent } from './Admin/karykarta-form-details/karykarta-form-details.component';
 import { EditKarykartaFormComponent } from './Admin/edit-karykarta-form/edit-karykarta-form.component';
 import { AddNewKarykartaQuestionComponent } from './Admin/add-new-karykarta-question/add-new-karykarta-question.component';
+import { SurveyDetailsComponent } from './Admin/survey-details/survey-details.component';
+import { AddComplaintMessagesComponent } from './Components/add-complaint-messages/add-complaint-messages.component';
+import { ViewComplaintsComponent } from './Admin/view-complaints/view-complaints.component';
+import { KnowledgeCenterComponent } from './Components/knowledge-center/knowledge-center.component';
+import { AddSuperadminMessageComponent } from './Admin/add-superadmin-message/add-superadmin-message.component';
 
 @NgModule({
   declarations: [
@@ -104,6 +109,11 @@ import { AddNewKarykartaQuestionComponent } from './Admin/add-new-karykarta-ques
     KarykartaFormDetailsComponent,
     EditKarykartaFormComponent,
     AddNewKarykartaQuestionComponent,
+    SurveyDetailsComponent,
+    AddComplaintMessagesComponent,
+    ViewComplaintsComponent,
+    KnowledgeCenterComponent,
+    AddSuperadminMessageComponent,
 
   ],
   imports: [

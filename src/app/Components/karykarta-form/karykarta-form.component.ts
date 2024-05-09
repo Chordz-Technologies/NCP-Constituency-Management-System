@@ -44,7 +44,7 @@ export class KarykartaFormComponent implements OnInit {
     }
 
     const formData = this.transformFormData(this.dynamicForm.value);
-    this.service.postKarykartaFormData(formData).subscribe(response => {
+    this.service.submitKarykartaFormData(formData).subscribe(response => {
       this.toastr.success('Karykarta Added Successfully!', 'Success');
       this.dynamicForm.reset();
     }, (error) => {

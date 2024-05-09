@@ -15,10 +15,10 @@
             </div>
           </div>
           <div class="row mb-3">
-            <label for="reason" class="col-sm-2 col-form-label">Reason</label>
+            <label for="village_specs" class="col-sm-2 col-form-label">Village Specs</label>
             <div class="col-sm-10">
-              <textarea cols="40" rows="4" type="text" class="form-control" formControlName="reason"
-                placeholder="Reason"></textarea>
+              <textarea cols="40" rows="4" type="text" class="form-control" formControlName="village_specs"
+                placeholder="Village Specs"></textarea>
             </div>
           </div>
           <div class="row mb-3">
@@ -28,7 +28,27 @@
                 placeholder="Voting Percentage %" />
             </div>
           </div>
-
+          <div class="row mb-3">
+            <label for="winner_votes" class="col-sm-2 col-form-label">Winner Votes</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="winner_votes"
+                placeholder="Winner Votes" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="runnerup_votes" class="col-sm-2 col-form-label">Runnerup Votes</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="runnerup_votes"
+                placeholder="Runnerup Votes" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="reason" class="col-sm-2 col-form-label">Reason</label>
+            <div class="col-sm-10">
+              <textarea cols="40" rows="4" type="text" class="form-control" formControlName="reason"
+                placeholder="Reason"></textarea>
+            </div>
+          </div>
           <div class="row mb-3">
             <label for="causes" class="col-sm-2 col-form-label">Causes</label>
             <div class="col-sm-10">
@@ -62,6 +82,25 @@
             <label for="othervoters" class="col-sm-2 col-form-label">Other Voters</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" formControlName="othervoters" placeholder="Other Voters" />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="hindu" class="col-sm-2 col-form-label">Hindu</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="hindu" placeholder="Hindu" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="muslim" class="col-sm-2 col-form-label">Muslim</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="muslim" placeholder="Muslim" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="buddhist" class="col-sm-2 col-form-label">Buddhist</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="buddhist" placeholder="Buddhist" />
             </div>
           </div>
 
@@ -120,14 +159,6 @@
           </div>
 
           <div class="row mb-3">
-            <label for="politicalleader_party1" class="col-sm-2 col-form-label">Political Leader Party 1</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" formControlName="politicalleader_party1"
-                placeholder="Political Leader Party 1" />
-            </div>
-          </div>
-
-          <div class="row mb-3">
             <label for="political_position1" class="col-sm-2 col-form-label">Political Position 1</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" formControlName="political_position1"
@@ -160,14 +191,6 @@
           </div>
 
           <div class="row mb-3">
-            <label for="politicalleader_party2" class="col-sm-2 col-form-label">Political Leader Party 2</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" formControlName="politicalleader_party2"
-                placeholder="Political Leader Party 2" />
-            </div>
-          </div>
-
-          <div class="row mb-3">
             <label for="political_position2" class="col-sm-2 col-form-label">Political Position 2</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" formControlName="political_position2"
@@ -176,7 +199,7 @@
           </div>
 
           <div class="row mb-3">
-            <label for="savidhanik_position1" class="col-sm-2 col-form-label">Savidhanik Position 1</label>
+            <label for="savidhanik_position1" class="col-sm-2 col-form-label">Savidhanik Position 2</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" formControlName="savidhanik_position2"
                 placeholder="Savidhanik Position 2" />
@@ -198,15 +221,6 @@
                 placeholder="Political Leader Name 3" />
             </div>
           </div>
-
-          <div class="row mb-3">
-            <label for="politicalleader_party3" class="col-sm-2 col-form-label">Political Leader Party 3</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" formControlName="politicalleader_party3"
-                placeholder="Political Leader Party 3" />
-            </div>
-          </div>
-
           <div class="row mb-3">
             <label for="political_position3" class="col-sm-2 col-form-label">Political Position 3</label>
             <div class="col-sm-10">
@@ -240,14 +254,6 @@
           </div>
 
           <div class="row mb-3">
-            <label for="politicalleader_party4" class="col-sm-2 col-form-label">Political Leader Party 4</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" formControlName="politicalleader_party4"
-                placeholder="Political Leader Party 4" />
-            </div>
-          </div>
-
-          <div class="row mb-3">
             <label for="political_position4" class="col-sm-2 col-form-label">Political Position 4</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" formControlName="political_position4"
@@ -262,7 +268,6 @@
                 placeholder="Savidhanik Position 4" />
             </div>
           </div>
-
           <div class="row mb-3">
             <label for="political_influence4" class="col-sm-2 col-form-label">Political Influence 4</label>
             <div class="col-sm-10">
@@ -270,7 +275,6 @@
                 placeholder="Political Influence 4" />
             </div>
           </div>
-
           <div class="row mb-3">
             <label for="politicalleader_name5" class="col-sm-2 col-form-label">Political Leader Name 5</label>
             <div class="col-sm-10">
@@ -278,15 +282,6 @@
                 placeholder="Political Leader Name 5" />
             </div>
           </div>
-
-          <div class="row mb-3">
-            <label for="politicalleader_party5" class="col-sm-2 col-form-label">Political Leader Party 5</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" formControlName="politicalleader_party5"
-                placeholder="Political Leader Party 5" />
-            </div>
-          </div>
-
           <div class="row mb-3">
             <label for="political_position5" class="col-sm-2 col-form-label">Political Position 5</label>
             <div class="col-sm-10">
@@ -294,7 +289,6 @@
                 placeholder="Political Position 5" />
             </div>
           </div>
-
           <div class="row mb-3">
             <label for="savidhanik_position5" class="col-sm-2 col-form-label">Savidhanik Position 5</label>
             <div class="col-sm-10">
@@ -302,7 +296,6 @@
                 placeholder="Savidhanik Position 5" />
             </div>
           </div>
-
           <div class="row mb-3">
             <label for="political_influence5" class="col-sm-2 col-form-label">Political Influence 5</label>
             <div class="col-sm-10">
@@ -310,6 +303,333 @@
                 placeholder="Political Influence 5" />
             </div>
           </div>
+
+          <div class="row mb-3">
+            <label for="opponent_name1" class="col-sm-2 col-form-label">Opponent Name 1</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_name1"
+                placeholder="Opponent Name 1" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_party1" class="col-sm-2 col-form-label">Opponent Party 1</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_party1"
+                placeholder="Opponent Party 1" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_party_postion1" class="col-sm-2 col-form-label">Opponent Party Position 1</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_party_postion1"
+                placeholder="Opponent Party Position 1" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_savidhanik_postion1" class="col-sm-2 col-form-label">Opponent Savidhanik Position 1</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_savidhanik_postion1"
+                placeholder="Opponent Savidhanik Position 1" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_influence1" class="col-sm-2 col-form-label">Opponent Influence 1</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_influence1"
+                placeholder="Opponent Influence 1" />
+            </div>
+          </div>
+          
+          <div class="row mb-3">
+            <label for="opponent_name2" class="col-sm-2 col-form-label">Opponent Name 2</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_name2"
+                placeholder="Opponent Name 2" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_party2" class="col-sm-2 col-form-label">Opponent Party 2</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_party2"
+                placeholder="Opponent Party 2" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_party_postion2" class="col-sm-2 col-form-label">Opponent Party Position 2</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_party_postion2"
+                placeholder="Opponent Party Position 2" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_savidhanik_postion2" class="col-sm-2 col-form-label">Opponent Savidhanik Position 2</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_savidhanik_postion2"
+                placeholder="Opponent Savidhanik Position 2" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_influence2" class="col-sm-2 col-form-label">Opponent Influence 2</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_influence2"
+                placeholder="Opponent Influence 2" />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="opponent_name3" class="col-sm-2 col-form-label">Opponent Name 3</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_name3"
+                placeholder="Opponent Name 3" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_party3" class="col-sm-2 col-form-label">Opponent Party 3</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_party3"
+                placeholder="Opponent Party 3" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_party_postion3" class="col-sm-2 col-form-label">Opponent Party Position 3</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_party_postion3"
+                placeholder="Opponent Party Position 3" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_savidhanik_postion3" class="col-sm-2 col-form-label">Opponent Savidhanik Position 3</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_savidhanik_postion3"
+                placeholder="Opponent Savidhanik Position 3" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_influence3" class="col-sm-2 col-form-label">Opponent Influence 3</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_influence3"
+                placeholder="Opponent Influence 3" />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="opponent_name4" class="col-sm-2 col-form-label">Opponent Name 4</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_name4"
+                placeholder="Opponent Name 4" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_party4" class="col-sm-2 col-form-label">Opponent Party 4</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_party4"
+                placeholder="Opponent Party 4" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_party_postion4" class="col-sm-2 col-form-label">Opponent Party Position 4</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_party_postion4"
+                placeholder="Opponent Party Position 4" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_savidhanik_postion4" class="col-sm-2 col-form-label">Opponent Savidhanik Position 4</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_savidhanik_postion4"
+                placeholder="Opponent Savidhanik Position 4" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_influence4" class="col-sm-2 col-form-label">Opponent Influence 4</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_influence4"
+                placeholder="Opponent Influence 4" />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="opponent_name5" class="col-sm-2 col-form-label">Opponent Name 5</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_name5"
+                placeholder="Opponent Name 5" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_party5" class="col-sm-2 col-form-label">Opponent Party 5</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_party5"
+                placeholder="Opponent Party 5" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_party_postion5" class="col-sm-2 col-form-label">Opponent Party Position 5</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_party_postion5"
+                placeholder="Opponent Party Position 5" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_savidhanik_postion5" class="col-sm-2 col-form-label">Opponent Savidhanik Position 5</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_savidhanik_postion5"
+                placeholder="Opponent Savidhanik Position 5" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="opponent_influence5" class="col-sm-2 col-form-label">Opponent Influence 5</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="opponent_influence5"
+                placeholder="Opponent Influence 5" />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="neutral_name1" class="col-sm-2 col-form-label">Neutral Name 1</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_name1"
+                placeholder="Neutral Name 1" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="neutral_designation1" class="col-sm-2 col-form-label">Neutral Designation 1</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_designation1"
+                placeholder="Neutral Designation 1" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="neutral_influence1" class="col-sm-2 col-form-label">Neutral Influence 1</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_influence1"
+                placeholder="Neutral Influence 1" />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="neutral_name2" class="col-sm-2 col-form-label">Neutral Name 2</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_name2"
+                placeholder="Neutral Name 2" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="neutral_designation2" class="col-sm-2 col-form-label">Neutral Designation 2</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_designation2"
+                placeholder="Neutral Designation 2" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="neutral_influence2" class="col-sm-2 col-form-label">Neutral Influence 2</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_influence2"
+                placeholder="Neutral Influence 2" />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="neutral_name3" class="col-sm-2 col-form-label">Neutral Name 3</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_name3"
+                placeholder="Neutral Name 3" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="neutral_designation3" class="col-sm-2 col-form-label">Neutral Designation 3</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_designation3"
+                placeholder="Neutral Designation 3" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="neutral_influence3" class="col-sm-2 col-form-label">Neutral Influence 3</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_influence3"
+                placeholder="Neutral Influence 3" />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="neutral_name4" class="col-sm-2 col-form-label">Neutral Name 4</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_name4"
+                placeholder="Neutral Name 4" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="neutral_designation4" class="col-sm-2 col-form-label">Neutral Designation 4</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_designation4"
+                placeholder="Neutral Designation 4" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="neutral_influence4" class="col-sm-2 col-form-label">Neutral Influence 4</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_influence4"
+                placeholder="Neutral Influence 4" />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="neutral_name5" class="col-sm-2 col-form-label">Neutral Name 5</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_name5"
+                placeholder="Neutral Name 5" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="neutral_designation5" class="col-sm-2 col-form-label">Neutral Designation 5</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_designation5"
+                placeholder="Neutral Designation 5" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="neutral_influence5" class="col-sm-2 col-form-label">Neutral Influence 5</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="neutral_influence5"
+                placeholder="Neutral Influence 5" />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="surname1" class="col-sm-2 col-form-label">Surname 1</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="surname1"
+                placeholder="Surname 1" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="surname2" class="col-sm-2 col-form-label">Surname 2</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="surname2"
+                placeholder="Surname 2" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="surname3" class="col-sm-2 col-form-label">Surname 3</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="surname3"
+                placeholder="Surname 3" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="surname4" class="col-sm-2 col-form-label">Surname 4</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="surname4"
+                placeholder="Surname 4" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="surname5" class="col-sm-2 col-form-label">Surname 5</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="surname5"
+                placeholder="Surname 5" />
+            </div>
+          </div>
+
 
           <br />
 
