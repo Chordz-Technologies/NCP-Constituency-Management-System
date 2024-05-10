@@ -1,7 +1,7 @@
 <div class="pt-5 pb-5">
     <div class="container pt-5 pb-5">
         <div class="card shadow bg-white rounded">
-            <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="dynamicForm">
                 <div *ngIf="response">
                     <div *ngFor="let question of response.all_questions; let i = index">
                         <div class="form-group">
@@ -18,17 +18,6 @@
                                         (change)="onCheckboxChange(question.q_id, option, $event)"> {{ option }}
                                 </div>
                             </div>
-
-                            <!-- <div *ngIf="question.question_type === 'checkbox'">
-                                <div *ngFor="let option of question.options">
-                                    <input type="checkbox" name="question{{ question.q_id }}"
-                                        id="option{{ question.q_id }}_{{ option }}" value="{{ option }}"
-                                        (change)="onCheckboxChange(question.q_id, option, $event)">
-                                    <label for="option{{ question.q_id }}{{ option }}">{{ option }}</label>
-                                    <br>
-                                </div>
-                            </div> -->
-
                             <div *ngIf="question.question_type === 'text' && question.q_id === 25">
                                 <textarea [formControlName]="'q' + question.q_id" rows="4" cols="50"
                                     value="{{ currentLocationLink }}" readonly></textarea>
@@ -42,14 +31,10 @@
                         </div>
                     </div>
                     <div class="btn-container">
-                        <button type="submit" class="btn">Submit</button>
+                        <button type="submit" class="btn" (click)="onSubmit()">Submit</button>
                     </div>
                 </div>
                 <div *ngIf="!response">Loading...</div>
-                <!-- <button (click)="saveLocation()">Save Current Location</button>
-                <p *ngIf="currentLocationLink">
-                    Current Location: <a [href]="currentLocationLink" target="_blank">{{ currentLocationLink }}</a>
-                </p> -->
             </form>
         </div>
     </div>

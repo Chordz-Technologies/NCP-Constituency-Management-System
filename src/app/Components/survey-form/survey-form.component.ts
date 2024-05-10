@@ -46,6 +46,15 @@ export class SurveyFormComponent implements OnInit {
     }
 
     const formData = this.transformFormData(this.dynamicForm.value);
+
+    // Add selected checkbox options to formData
+    for (const questionId in this.selectedOptions) {
+      if (this.selectedOptions.hasOwnProperty(questionId)) {
+        const selectedOptionsForQuestion = this.selectedOptions[questionId];
+        formData['q' + questionId + '_response'] = "" + selectedOptionsForQuestion;
+      }
+    }
+
     this.service.submitSurveyFormData(formData).subscribe(response => {
       this.toastr.success('Survey Form Added Successfully!', 'Success');
       this.dynamicForm.reset();

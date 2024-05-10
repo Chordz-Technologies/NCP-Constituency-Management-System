@@ -64,9 +64,6 @@ export class BhorMapComponent {
     }
   }
 
-
-
-
   openModal(regionId: number, content: any) {
     this.http.get<any>(`${this.url}/bhorvillagedetails/${regionId}/`)
       .subscribe(data => {
