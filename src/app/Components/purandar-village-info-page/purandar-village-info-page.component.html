@@ -34,33 +34,37 @@
             style="height: 50px; width: 50px" />
           <img *ngIf="villageData.rulingparty === 'Congress'" src="/assets/congressLogo.png" alt="Congress Logo"
             style="height: 50px; width: 50px" />
-          <h3>Religion wise Voters</h3>
+          <!-- <h3>Religion wise Voters</h3>
           <p><strong>Hindu:</strong> {{ villageData.hindu }}</p>
           <p><strong>Muslim:</strong> {{ villageData.muslim }}</p>
-          <p><strong>Buddhist:</strong> {{ villageData.buddhist }}</p>
+          <p><strong>Buddhist:</strong> {{ villageData.buddhist }}</p> -->
+        </div>
+        <h3>Religion-wise Voters</h3>
+        <div style="max-width: 300px; margin: 0 auto">
+          <canvas id="myChart"></canvas>
         </div>
 
         <div class="pt-4">
           <h3 class="pb-3">Booth Leader Information</h3>
           <table mat-table [dataSource]="boothLeaderDataSource" class="mat-elevation-z8 responsive-table">
             <ng-container matColumnDef="totalBooths">
-              <th mat-header-cell *matHeaderCellDef><b>Total Booths</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Total Booths</b></th>
               <td mat-cell *matCellDef="let element">{{ element.total_booths }}</td>
             </ng-container>
             <ng-container matColumnDef="boothLeaderName">
-              <th mat-header-cell *matHeaderCellDef><b>Booth Leader Name</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Booth Leader Name</b></th>
               <td mat-cell *matCellDef="let element">{{ element.boothleader_name }}</td>
             </ng-container>
             <ng-container matColumnDef="boothLeader1">
-              <th mat-header-cell *matHeaderCellDef><b>Booth Leader 1</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Booth Leader 1</b></th>
               <td mat-cell *matCellDef="let element">{{ element.boothleader_no1 }}</td>
             </ng-container>
             <ng-container matColumnDef="boothLeader2">
-              <th mat-header-cell *matHeaderCellDef><b>Booth Leader 2</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Booth Leader 2</b></th>
               <td mat-cell *matCellDef="let element">{{ element.boothleader_no2 }}</td>
             </ng-container>
             <ng-container matColumnDef="boothLeaderAddress">
-              <th mat-header-cell *matHeaderCellDef><b>Booth Leader Address</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Booth Leader Address</b></th>
               <td mat-cell *matCellDef="let element">{{ element.boothleader_address }}</td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -72,19 +76,19 @@
           <h3 class="pb-3">Political Leader Information</h3>
           <table mat-table [dataSource]="politicalLeaderDataSource" class="mat-elevation-z8 responsive-table">
             <ng-container matColumnDef="politicalLeaderName">
-              <th mat-header-cell *matHeaderCellDef><b>Political Leader Name</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Political Leader Name</b></th>
               <td mat-cell *matCellDef="let element">{{ element.politicalleader_name }}</td>
             </ng-container>
             <ng-container matColumnDef="politicalPosition">
-              <th mat-header-cell *matHeaderCellDef><b>Political Position</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Political Position</b></th>
               <td mat-cell *matCellDef="let element">{{ element.political_position }}</td>
             </ng-container>
             <ng-container matColumnDef="savidhanikPosition">
-              <th mat-header-cell *matHeaderCellDef><b>Savidhanik Position</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Savidhanik Position</b></th>
               <td mat-cell *matCellDef="let element">{{ element.savidhanik_position }}</td>
             </ng-container>
             <ng-container matColumnDef="politicalInfluence">
-              <th mat-header-cell *matHeaderCellDef><b>Political Influence</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Political Influence</b></th>
               <td mat-cell *matCellDef="let element">{{ element.political_influence }}</td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
@@ -96,23 +100,23 @@
           <h3 class="pb-3">Opponent Information</h3>
           <table mat-table [dataSource]="opponentDataSource" class="mat-elevation-z8 responsive-table">
             <ng-container matColumnDef="opponentName">
-              <th mat-header-cell *matHeaderCellDef><b>Opponent Name</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Opponent Name</b></th>
               <td mat-cell *matCellDef="let element">{{ element.opponent_name }}</td>
             </ng-container>
             <ng-container matColumnDef="opponentParty">
-              <th mat-header-cell *matHeaderCellDef><b>Opponent Party</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Opponent Party</b></th>
               <td mat-cell *matCellDef="let element">{{ element.opponent_party }}</td>
             </ng-container>
             <ng-container matColumnDef="opponentPartyPosition">
-              <th mat-header-cell *matHeaderCellDef><b>Opponent Party Position</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Opponent Party Position</b></th>
               <td mat-cell *matCellDef="let element">{{ element.opponent_party_postion }}</td>
             </ng-container>
             <ng-container matColumnDef="opponentSavidhanikPosition">
-              <th mat-header-cell *matHeaderCellDef><b>Opponent Savidhanik Position</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Opponent Savidhanik Position</b></th>
               <td mat-cell *matCellDef="let element">{{ element.opponent_savidhanik_postion }}</td>
             </ng-container>
             <ng-container matColumnDef="opponentInfluence">
-              <th mat-header-cell *matHeaderCellDef><b>Opponent Influence</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Opponent Influence</b></th>
               <td mat-cell *matCellDef="let element">{{ element.opponent_influence }}</td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
@@ -124,15 +128,15 @@
           <h3 class="pb-3">Neutral Information</h3>
           <table mat-table [dataSource]="neutralDataSource" class="mat-elevation-z8 responsive-table">
             <ng-container matColumnDef="neutralName">
-              <th mat-header-cell *matHeaderCellDef><b>Neutral Name</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Neutral Name</b></th>
               <td mat-cell *matCellDef="let element">{{ element.neutral_name }}</td>
             </ng-container>
             <ng-container matColumnDef="neutralDesignation">
-              <th mat-header-cell *matHeaderCellDef><b>Neutral Designation</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Neutral Designation</b></th>
               <td mat-cell *matCellDef="let element">{{ element.neutral_designation }}</td>
             </ng-container>
             <ng-container matColumnDef="neutralInfluence">
-              <th mat-header-cell *matHeaderCellDef><b>Neutral Influence</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Neutral Influence</b></th>
               <td mat-cell *matCellDef="let element">{{ element.neutral_influence }}</td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns3"></tr>
@@ -144,20 +148,15 @@
           <h3 class="pb-3">Surname Information</h3>
           <table mat-table [dataSource]="surnameDataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="Surname">
-              <th mat-header-cell *matHeaderCellDef><b>Surname</b></th>
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Surname</b></th>
               <td mat-cell *matCellDef="let element">{{ element.surname }}</td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns4"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns4;"></tr>
           </table>
         </div>
-
-        <h3>Religion-wise Voters</h3>
-        <div class="bg-light" style="max-width: 300px; margin: 0 auto">
-          <canvas id="myChart"></canvas>
-        </div>
         <br>
-        <button type="button" class="btn btn-danger me-2 mb-2" routerLink="/baramatiMap">
+        <button type="button" class="btn btn-danger me-2 mb-2" routerLink="/purandarMap">
           Close
         </button>
       </div>
