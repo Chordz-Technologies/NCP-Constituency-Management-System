@@ -216,4 +216,14 @@ export class ServiceService {
   viewComplaintMessages(): Observable<any> {
     return this.http.get<any>(`${this.url}/allfeedbacks/`);
   }
+
+   // Reports
+
+  karykartaExcelReport(): Observable<Blob> {
+    return this.http.get(`${this.url}/generate-excel-report/`, { responseType: 'blob' });
+  }
+
+  karykartaPdfReport(): Observable<Blob> {
+    return this.http.get(`${this.url}/generate-pdf-report/`, { responseType: 'blob' });
+  }
 }
