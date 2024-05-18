@@ -10,8 +10,7 @@ export class AuthserviceService {
 
   isLoggedIn: BehaviorSubject<boolean>;
 
-
-  // private url = environment.apiUrl;
+  private url = environment.apiUrl;
 
   constructor(private http: HttpClient) {
     // Initialize isLoggedIn BehaviorSubject based on the value stored in localStorage
@@ -21,26 +20,22 @@ export class AuthserviceService {
   }
 
   login(adminType: string, adminId: string) {
-
     localStorage.setItem('adminType', adminType); // Setting admin type in localStorage
     localStorage.setItem('adminId', adminId);
-
     this.isLoggedIn.next(true);
   }
-
-
-
 
   isLoggedIn2() {
     return !!localStorage.getItem('adminType');
   }
 
   logout() {
-
     localStorage.removeItem('adminType');
     localStorage.removeItem('adminId');
-
     this.isLoggedIn.next(false);
+  }
 
+  karyakartaLogin(loginData: { q18_response: string }): Observable<any> {
+    return this.http.post(`${this.url}/karyakartalogin/`, loginData);
   }
 }

@@ -9,32 +9,32 @@
             <mat-card-content>
                 <form [formGroup]="messageForm">
                     <div class="row mb-3">
-                        <label for="message_for" class="col-sm-2 col-form-label">Karykarta Level</label>
+                        <label for="message_for" class="col-sm-2 col-form-label"><b>Karykarta Level : </b></label>
                         <div class="col-sm-10">
-                            <textarea cols="40" rows="4" type="text" class="form-control" formControlName="message_for"
-                                placeholder="Enter karykarta level eg. Level1, Level2"></textarea>
+                            <div class="row">
+                                <div class="col-sm-6" *ngFor="let option of options; let i = index">
+                                    <label>
+                                        <input type="checkbox" [value]="option.value"
+                                            (change)="onCheckboxChange($event)" />
+                                        {{ option.name }}
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                     <div class="row mb-3">
-                        <label for="question" class="col-sm-2 col-form-label">Message</label>
+                        <label for="question" class="col-sm-2 col-form-label"><b>Message : </b></label>
                         <div class="col-sm-10">
                             <textarea cols="40" rows="4" type="text" class="form-control" formControlName="message"
                                 placeholder="Enter message"></textarea>
                         </div>
                     </div>
-
                     <br />
-
                     <div class="col-12 text-center">
                         <br />
-                        <button type="submit" class="btn btn-primary me-2 mb-2"
-                            (click)="postMessageFormData()">
+                        <button type="submit" class="btn btn-primary me-2 mb-2" (click)="postMessageFormData()">
                             Submit
                         </button>
-                        <!-- <button type="button" class="btn btn-danger me-2 mb-2" routerLink="/adminhome/surveyFormDetails">
-                            Close
-                        </button> -->
                     </div>
                 </form>
             </mat-card-content>

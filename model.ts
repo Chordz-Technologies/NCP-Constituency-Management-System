@@ -24,6 +24,11 @@ export class villageData_model {
     political_position1!: string;
     savidhanik_position1!: string;
     political_influence1!: string;
+    voting_percentage1!: string;
+    ncp_ap_1!: string;
+    ncp_sp_1!: string;
+    bsp1!: string;
+    apaksha1!: string;
     politicalleader_name2!: string;
     political_position2!: string;
     savidhanik_position2!: string;

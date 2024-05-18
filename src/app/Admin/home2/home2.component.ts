@@ -12,6 +12,10 @@ export class Home2Component {
 
   constructor(private service: ServiceService) { }
 
+  openGoogleForm(): void {
+    window.open('https://docs.google.com/forms/u/0/', '_blank');
+  }
+
   downloadExcelFile() {
     this.service.karykartaExcelReport().subscribe({
       next: (res) => {

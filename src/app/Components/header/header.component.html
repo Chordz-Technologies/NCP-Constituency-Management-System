@@ -20,10 +20,10 @@
   <h1><b>NCP Constituency Management System</b></h1>
 </div>
 
-<nav class="navbar navbar-expand-md navbar-dark sticky-top fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-light sticky-top fixed-top">
   <div class="container">
-    <a class="navbar-brand d-md-none d-xs-block" href="#">
-      <img src="./assets/ncpLogo.png" class="rounded-circle" height="40" alt="Company Logo" />
+    <a class="navbar-brand d-xs-block" routerLink="">
+      <img src="./assets/ncpLogo.png" class="rounded-circle" height="80" alt="Company Logo" />
     </a>
     <button class="navbar-toggler" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
       data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -37,37 +37,29 @@
           <a class="nav-link" aria-current="page" routerLink="" [routerLinkActive]="['active']"
             [routerLinkActiveOptions]="{ exact: true }" (click)="isNavbarCollapsed = true"><b>Home</b></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="baramatiMap" [routerLinkActive]="['active']"
-            (click)="isNavbarCollapsed = true"><b>Baramati</b></a>
+        <li class="nav-item dropdown" ngbDropdown>
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+            <b>Select Constituency </b>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
+            <a class="dropdown-item" routerLink="baramatiMap" routerLinkActive="active"
+              (click)="isNavbarCollapsed = true">Baramati</a>
+            <a class="dropdown-item" routerLink="khadkwaslaMap" routerLinkActive="active"
+              (click)="isNavbarCollapsed = true">Khadakwasla</a>
+            <a class="dropdown-item" routerLink="daundMap" routerLinkActive="active"
+              (click)="isNavbarCollapsed = true">Daund</a>
+            <a class="dropdown-item" routerLink="indapurMap" routerLinkActive="active"
+              (click)="isNavbarCollapsed = true">Indapur</a>
+            <a class="dropdown-item" routerLink="purandarMap" routerLinkActive="active"
+              (click)="isNavbarCollapsed = true">Purandar</a>
+            <a class="dropdown-item" routerLink="bhorMap" routerLinkActive="active"
+              (click)="isNavbarCollapsed = true">Bhor</a>
+          </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="khadkwaslaMap" [routerLinkActive]="['active']"
-            (click)="isNavbarCollapsed = true"><b>Khadakwasla</b></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="daundMap" [routerLinkActive]="['active']"
-            (click)="isNavbarCollapsed = true"><b>Daund</b></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="indapurMap" [routerLinkActive]="['active']"
-            (click)="isNavbarCollapsed = true"><b>Indapur</b></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="purandarMap" [routerLinkActive]="['active']"
-            (click)="isNavbarCollapsed = true"><b>Purandar</b></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="bhorMap" [routerLinkActive]="['active']"
-            (click)="isNavbarCollapsed = true"><b>Bhor</b></a>
-        </li>
-
         <li class="nav-item">
           <a class="nav-link" aria-current="page" routerLink="surveyForm" [routerLinkActive]="['active']"
-            (click)="isNavbarCollapsed = true"><b>Survey
-              Form</b></a>
+            (click)="isNavbarCollapsed = true"><b>Survey Form</b></a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link" aria-current="page" routerLink="karykartaForm" [routerLinkActive]="['active']"
             (click)="isNavbarCollapsed = true"><b>Karykarta Form</b></a>
@@ -77,7 +69,7 @@
             (click)="isNavbarCollapsed = true"><b>Knowledge Center</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn rounded-0 btn-danger" routerLink="adminLogin"
+          <a class="nav-link" aria-current="page" routerLink="adminLogin" [routerLinkActive]="['active']"
             (click)="isNavbarCollapsed = true"><b>Admin Login</b></a>
         </li>
       </ul>

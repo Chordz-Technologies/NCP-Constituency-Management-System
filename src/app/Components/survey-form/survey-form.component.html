@@ -18,14 +18,14 @@
                                         (change)="onCheckboxChange(question.q_id, option, $event)"> {{ option }}
                                 </div>
                             </div>
-                            <div *ngIf="question.question_type === 'text' && question.q_id === 25">
-                                <textarea [formControlName]="'q' + question.q_id" rows="4" cols="50"
-                                    value="{{ currentLocationLink }}" readonly></textarea>
-                                <br>
+                            <div *ngIf="question.question_type === 'text' && question.q_id === 21">
+                                <textarea [formControlName]="'q' + question.q_id" rows="3" cols="50" class="p-2 shadow bg-white rounded"
+                                    value="{{ currentLocationLink }}" placeholder="Enter Values" readonly></textarea>
+                                <br><br>
                                 <button type="button" (click)="saveLocation()">Save Current Location</button>
                             </div>
-                            <div *ngIf="question.question_type === 'text' && question.q_id !== 25">
-                                <textarea rows="4" cols="50" [formControlName]="'q' + question.q_id" class="p-2"
+                            <div *ngIf="question.question_type === 'text' && question.q_id !== 21">
+                                <textarea rows="3" cols="50" [formControlName]="'q' + question.q_id" class="p-2 shadow bg-white rounded"
                                     placeholder="Enter Values"></textarea>
                             </div>
                         </div>

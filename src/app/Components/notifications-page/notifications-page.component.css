@@ -1,4 +1,11 @@
-th, td {
+th,
+td {
     text-align: center;
     width: 5%;
+}
+
+.btn {
+    background: #2E3192;
+    color: white;
+    padding: 10px 30px 10px 30px;
 }

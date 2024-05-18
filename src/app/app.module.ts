@@ -16,6 +16,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { AdminhomeComponent } from './Admin/adminhome/adminhome.component';
 import { SidebarComponent } from './Admin/sidebar/sidebar.component';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminloginComponent } from './Components/adminlogin/adminlogin.component';
@@ -129,6 +130,7 @@ import { AddSuperadminMessageComponent } from './Admin/add-superadmin-message/ad
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
+    NgbDropdownModule,
     NgbCollapseModule,
     HttpClientModule,
     FormsModule,

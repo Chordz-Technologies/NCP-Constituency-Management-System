@@ -12,13 +12,13 @@
                                         (change)="onRadioChange(question.q_id, option)"> {{ option }}
                                 </div>
                             </div>
-                            <div *ngIf="question.question_type === 'text' && question.q_id !== 9">
-                                <textarea rows="2" cols="50" [formControlName]="'q' + question.q_id" class="p-2" placeholder="Enter Values"></textarea>
+                            <div *ngIf="question.question_type === 'text' && question.q_id !== 12">
+                                <textarea rows="2" cols="50" [formControlName]="'q' + question.q_id" class="p-2 shadow bg-white rounded" placeholder="Enter Values"></textarea>
                             </div>
 
-                            <div *ngIf="question.question_type === 'text' && question.q_id === 9">
+                            <div *ngIf="question.question_type === 'text' && question.q_id === 12">
                                 <!-- <div *ngFor="let option of question.options"> -->
-                                    <input type="date" [formControlName]="'q' + question.q_id">
+                                    <input type="date" [formControlName]="'q' + question.q_id" class="p-2 shadow bg-white rounded">
                                 <!-- </div> -->
                             </div>
 

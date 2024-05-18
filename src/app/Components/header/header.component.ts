@@ -7,14 +7,4 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   isNavbarCollapsed = true;
-
-
-  // constructor(private authService: AuthService) { }
-
-  ngOnInit(): void {
-  }
-
-  // onLogout() {
-  //   this.authService.logout();
-  // }
 }
