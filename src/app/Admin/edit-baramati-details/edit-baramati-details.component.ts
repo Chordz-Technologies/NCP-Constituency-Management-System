@@ -13,7 +13,7 @@ import { ServiceService } from 'src/app/Service/service.service';
 export class EditBaramatiDetailsComponent {
   villageForm!: FormGroup;
   villageData_model: villageData_model = new villageData_model();
-  villageId!: number; 
+  villageId!: number;
 
   showsubmit!: boolean;
   showupdate!: boolean;
@@ -42,22 +42,47 @@ export class EditBaramatiDetailsComponent {
       political_position1: [''],
       savidhanik_position1: [''],
       political_influence1: [''],
+      voting_percentage1: [''],
+      ncp_ap_1: [''],
+      ncp_sp_1: [''],
+      bsp1: [''],
+      apaksha1: [''],
       politicalleader_name2: [''],
       political_position2: [''],
       savidhanik_position2: [''],
       political_influence2: [''],
+      voting_percentage2: [''],
+      ncp_ap_2: [''],
+      ncp_sp_2: [''],
+      bsp2: [''],
+      apaksha2: [''],
       politicalleader_name3: [''],
       political_position3: [''],
       savidhanik_position3: [''],
       political_influence3: [''],
+      voting_percentage3: [''],
+      ncp_ap_3: [''],
+      ncp_sp_3: [''],
+      bsp3: [''],
+      apaksha3: [''],
       politicalleader_name4: [''],
       political_position4: [''],
       savidhanik_position4: [''],
       political_influence4: [''],
+      voting_percentage4: [''],
+      ncp_ap_4: [''],
+      ncp_sp_4: [''],
+      bsp4: [''],
+      apaksha4: [''],
       politicalleader_name5: [''],
       political_position5: [''],
       savidhanik_position5: [''],
       political_influence5: [''],
+      voting_percentage5: [''],
+      ncp_ap_5: [''],
+      ncp_sp_5: [''],
+      bsp5: [''],
+      apaksha5: [''],
       village_specs: [''],
       winner_votes: [''],
       runnerup_votes: [''],
@@ -155,25 +180,50 @@ export class EditBaramatiDetailsComponent {
       political_position1: village.political_position1,
       savidhanik_position1: village.savidhanik_position1,
       political_influence1: village.political_influence1,
+      voting_percentage1: village.voting_percentage1,
+      ncp_ap_1: village.ncp_ap_1,
+      ncp_sp_1: village.ncp_sp_1,
+      bsp1: village.bsp1,
+      apaksha1: village.apaksha1,
       politicalleader_name2: village.politicalleader_name2,
       political_position2: village.political_position2,
       savidhanik_position2: village.savidhanik_position2,
       political_influence2: village.political_influence2,
+      voting_percentage2: village.voting_percentage2,
+      ncp_ap_2: village.ncp_ap_2,
+      ncp_sp_2: village.ncp_sp_2,
+      bsp2: village.bsp2,
+      apaksha2: village.apaksha2,
       politicalleader_name3: village.politicalleader_name3,
       political_position3: village.political_position3,
       savidhanik_position3: village.savidhanik_position3,
       political_influence3: village.political_influence3,
+      voting_percentage3: village.voting_percentage3,
+      ncp_ap_3: village.ncp_ap_3,
+      ncp_sp_3: village.ncp_sp_3,
+      bsp3: village.bsp3,
+      apaksha3: village.apaksha3,
       politicalleader_name4: village.politicalleader_name4,
       political_position4: village.political_position4,
       savidhanik_position4: village.savidhanik_position4,
       political_influence4: village.political_influence4,
+      voting_percentage4: village.voting_percentage4,
+      ncp_ap_4: village.ncp_ap_4,
+      ncp_sp_4: village.ncp_sp_4,
+      bsp4: village.bsp4,
+      apaksha4: village.apaksha4,
       politicalleader_name5: village.politicalleader_name5,
       political_position5: village.political_position5,
       savidhanik_position5: village.savidhanik_position5,
       political_influence5: village.political_influence5,
+      voting_percentage5: village.voting_percentage5,
+      ncp_ap_5: village.ncp_ap_5,
+      ncp_sp_5: village.ncp_sp_5,
+      bsp5: village.bsp5,
+      apaksha5: village.apaksha5,
       village_specs: village.village_specs,
-      winner_votes: village.winner_votes, 
-      runnerup_votes: village.runnerup_votes, 
+      winner_votes: village.winner_votes,
+      runnerup_votes: village.runnerup_votes,
       hindu: village.hindu,
       muslim: village.muslim,
       buddhist: village.buddhist,
@@ -222,54 +272,8 @@ export class EditBaramatiDetailsComponent {
       surname3: village.surname3,
       surname4: village.surname4,
       surname5: village.surname5,
-
-      // villageImage: village.pimages
     })
   }
-
-  // postproducts() {
-  //   const villageData = {
-  //     pdescription: this.villageForm.value.pdescription,
-  //     pname: this.villageForm.value.productsname,
-  //     pcategory: this.villageForm.value.category,
-  //     psubcategory: this.villageForm.value.subcategory,
-  //     // pimages: this.productimageData,
-  //   }
-
-  //   // Check if any field is empty
-  //   const isEmptyField = Object.values(villageData).some(value => !value);
-
-  //   if (isEmptyField) {
-  //     this.toastr.error('Please fill all fields', 'Error');
-  //     return; // Stop further execution
-  //   }
-
-  //   let postData = { ...villageData };
-  //   console.log(postData);
-
-  //   console.log("Before submitting the data is", postData);
-
-  //   const formData: FormData = new FormData();
-  //   for (const [key, value] of Object.entries(postData)) {
-  //     console.log(key, value);
-  //     formData.append(key, value)
-  //   }
-  //   console.log("the data is", formData);
-
-  //   this.service.ProductsPost(formData).subscribe((res) => {
-  //     console.log(res)
-  //     if (res.status === 'success') {
-  //       this.toastr.success('successfully added', 'Success');
-  //     } else {
-  //       this.toastr.error('something went wrong', 'Error');
-  //     }
-  //   });
-
-  //   // Reset the form after submitting
-  //   this.villageForm.reset();
-  //   this.router.navigate(['adminhome/admin_products']);
-  // }
-
 
   // deleteVillage(): void {
   //   this.service.deleteVillageById(this.villageId).subscribe(
@@ -286,7 +290,6 @@ export class EditBaramatiDetailsComponent {
   // }
 
   updateVillage() {
-
     const villageData = {
       villagename: this.villageForm.value.villagename,
       reason: this.villageForm.value.reason,
@@ -306,22 +309,47 @@ export class EditBaramatiDetailsComponent {
       political_position1: this.villageForm.value.political_position1,
       savidhanik_position1: this.villageForm.value.savidhanik_position1,
       political_influence1: this.villageForm.value.political_influence1,
+      voting_percentage1: this.villageForm.value.voting_percentage1,
+      ncp_ap_1: this.villageForm.value.ncp_ap_1,
+      ncp_sp_1: this.villageForm.value.ncp_sp_1,
+      bsp1: this.villageForm.value.bsp1,
+      apaksha1: this.villageForm.value.apaksha1,
       politicalleader_name2: this.villageForm.value.politicalleader_name2,
       political_position2: this.villageForm.value.political_position2,
       savidhanik_position2: this.villageForm.value.savidhanik_position2,
       political_influence2: this.villageForm.value.political_influence2,
+      voting_percentage2: this.villageForm.value.voting_percentage2,
+      ncp_ap_2: this.villageForm.value.ncp_ap_2,
+      ncp_sp_2: this.villageForm.value.ncp_sp_2,
+      bsp2: this.villageForm.value.bsp2,
+      apaksha2: this.villageForm.value.apaksha2,
       politicalleader_name3: this.villageForm.value.politicalleader_name3,
       political_position3: this.villageForm.value.political_position3,
       savidhanik_position3: this.villageForm.value.savidhanik_position3,
       political_influence3: this.villageForm.value.political_influence3,
+      voting_percentage3: this.villageForm.value.voting_percentage3,
+      ncp_ap_3: this.villageForm.value.ncp_ap_3,
+      ncp_sp_3: this.villageForm.value.ncp_sp_3,
+      bsp3: this.villageForm.value.bsp3,
+      apaksha3: this.villageForm.value.apaksha3,
       politicalleader_name4: this.villageForm.value.politicalleader_name4,
       political_position4: this.villageForm.value.political_position4,
       savidhanik_position4: this.villageForm.value.savidhanik_position4,
       political_influence4: this.villageForm.value.political_influence4,
+      voting_percentage4: this.villageForm.value.voting_percentage4,
+      ncp_ap_4: this.villageForm.value.ncp_ap_4,
+      ncp_sp_4: this.villageForm.value.ncp_sp_4,
+      bsp4: this.villageForm.value.bsp4,
+      apaksha4: this.villageForm.value.apaksha4,
       politicalleader_name5: this.villageForm.value.politicalleader_name5,
       political_position5: this.villageForm.value.political_position5,
       savidhanik_position5: this.villageForm.value.savidhanik_position5,
       political_influence5: this.villageForm.value.political_influence5,
+      voting_percentage5: this.villageForm.value.voting_percentage5,
+      ncp_ap_5: this.villageForm.value.ncp_ap_5,
+      ncp_sp_5: this.villageForm.value.ncp_sp_5,
+      bsp5: this.villageForm.value.bsp5,
+      apaksha5: this.villageForm.value.apaksha5,
       village_specs: this.villageForm.value.village_specs,
       winner_votes: this.villageForm.value.winner_votes,
       runnerup_votes: this.villageForm.value.runnerup_votes,
@@ -373,11 +401,8 @@ export class EditBaramatiDetailsComponent {
       surname3: this.villageForm.value.surname3,
       surname4: this.villageForm.value.surname4,
       surname5: this.villageForm.value.surname5,
-      // pimages : this.productimageData
-      // ...(this.productimageData ? { pimages: this.productimageData } : {})
     };
 
-    // let formData2 = new FormData();
     const formData: FormData = new FormData();
     for (const [key, value] of Object.entries(villageData)) {
       formData.append(key, value)
@@ -390,16 +415,4 @@ export class EditBaramatiDetailsComponent {
     })
 
   }
-  // for product image
-  // onImageSelected(product: any) {
-
-  //   const fileList: FileList = product.target.files;
-  //   if (fileList.length > 0) {
-  //     this.productimageData = fileList[0];
-  //     console.log('Selected image:', this.productimageData);
-  //   } else {
-  //     this.productimageData = null; // Reset file if no file is selected
-  //   }
-
-  // }
 }

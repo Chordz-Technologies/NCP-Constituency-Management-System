@@ -18,7 +18,7 @@ export class KhadakwaslaVillageInfoPageComponent {
   displayedColumns = ['totalBooths', 'boothLeaderName', 'boothLeader1', 'boothLeader2', 'boothLeaderAddress'];
 
   politicalLeaderDataSource = new MatTableDataSource<any>();
-  displayedColumns1 = ['politicalLeaderName', 'politicalPosition', 'savidhanikPosition', 'politicalInfluence'];
+  displayedColumns1 = ['politicalLeaderName', 'politicalPosition', 'savidhanikPosition', 'politicalInfluence', 'votingPercentage', 'ncpAP', 'ncpSP', 'bsp', 'apaksha'];
 
   opponentDataSource = new MatTableDataSource<any>();
   displayedColumns2 = ['opponentName', 'opponentParty', 'opponentPartyPosition', 'opponentSavidhanikPosition', 'opponentInfluence'];
@@ -112,7 +112,12 @@ export class KhadakwaslaVillageInfoPageComponent {
         'politicalleader_name': this.villageData[`politicalleader_name${i}`],
         'political_position': this.villageData[`political_position${i}`],
         'savidhanik_position': this.villageData[`savidhanik_position${i}`],
-        'political_influence': this.villageData[`political_influence${i}`]
+        'political_influence': this.villageData[`political_influence${i}`],
+        'voting_percentage': this.villageData[`voting_percentage${i}`],
+        'ncp_ap_': this.villageData[`ncp_ap_${i}`],
+        'ncp_sp_': this.villageData[`ncp_sp_${i}`],
+        'bsp': this.villageData[`bsp${i}`],
+        'apaksha': this.villageData[`apaksha${i}`],
       });
     }
     this.politicalLeaderDataSource.data = politicalLeaderData;

@@ -91,6 +91,26 @@
               <th class="table-header" mat-header-cell *matHeaderCellDef><b>Political Influence</b></th>
               <td mat-cell *matCellDef="let element">{{ element.political_influence }}</td>
             </ng-container>
+            <ng-container matColumnDef="votingPercentage">
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Voting Percentage</b></th>
+              <td mat-cell *matCellDef="let element">{{ element.voting_percentage }}</td>
+            </ng-container>
+            <ng-container matColumnDef="ncpAP">
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>NCP AP</b></th>
+              <td mat-cell *matCellDef="let element">{{ element.ncp_ap_ }}</td>
+            </ng-container>
+            <ng-container matColumnDef="ncpSP">
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>NCP SP</b></th>
+              <td mat-cell *matCellDef="let element">{{ element.ncp_sp_ }}</td>
+            </ng-container>
+            <ng-container matColumnDef="bsp">
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>BSP</b></th>
+              <td mat-cell *matCellDef="let element">{{ element.bsp }}</td>
+            </ng-container>
+            <ng-container matColumnDef="apaksha">
+              <th class="table-header" mat-header-cell *matHeaderCellDef><b>Apaksha</b></th>
+              <td mat-cell *matCellDef="let element">{{ element.apaksha }}</td>
+            </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
           </table>
