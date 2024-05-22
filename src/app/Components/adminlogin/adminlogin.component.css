@@ -1,11 +1,15 @@
-mat-card {
-    /* margin-top: 30px; */
-    background-color: lightgray;
+.main {
+    background-position: center center;
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(src/assets/ncp-bg.jpg);
+    background-size: cover;
+}
 
+mat-card {
+    margin: 0 400px 0 400px;
+    padding: 20px;
 }
 
 img {
-    /* margin-top: 8px; */
     margin-right: 45px;
     width: 120px;
     height: 120px;
@@ -19,7 +23,8 @@ mat-card-title {
     font-size: 25px;
     color: black;
 }
-mat-card-content{
+
+mat-card-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,9 +32,17 @@ mat-card-content{
     max-width: 80%;
     margin: auto;
 }
+
+.custom-icon {
+    padding: 0 !important;
+}
+
 .btn {
     width: 30%;
+    padding: 10px 20px 10px 20px;
+    background: #2E3192;
 }
+
 .example-form {
     min-width: 150px;
     max-width: 500px;
@@ -38,4 +51,15 @@ mat-card-content{
 
 .example-full-width {
     width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        margin: 0 5px 0 5px;
+        padding: 15px;
+    }
+
+    .btn {
+        width: 60%;
+    }
 }

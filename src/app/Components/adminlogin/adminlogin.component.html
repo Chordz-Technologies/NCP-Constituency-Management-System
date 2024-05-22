@@ -1,62 +1,65 @@
-<div>
-  <mat-card>
-    <mat-card-title>
-      <div class="user ps-5">
-        <img src="../../../assets/ncpLogo.png" alt="logo" height="100px" width="100px" />
+<div class="main">
+  <div class="container pt-4 pb-4">
+    <mat-card class="card bg-white shadow rounded">
+      <mat-card-title>
+        <div class="user ps-5">
+          <img src="../../../assets/ncpLogo.png" alt="logo" height="100px" width="100px" />
 
-        <!-- <p class="mail">admin@gmail.com</p> src="https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png"-->
-      </div>
-    </mat-card-title>
-    <mat-card-content>
-      <h2>Login</h2>
-      <form class="example-form" [formGroup]="loginform">
-        <mat-form-field class="example-full-width pt-4">
-          <!-- <mat-label>Admin Name</mat-label> -->
-          <input matInput placeholder="Admin name" id="adminname" formControlName="adminname" required />
-        </mat-form-field>
-        <mat-form-field class="example-full-width pt-3 position-relative">
-          <!-- <mat-label>Admin Password</mat-label> -->
-          <input matInput placeholder="Password" id="adminpassword" type="{{ hidePassword ? 'password' : 'text' }}"
-            formControlName="adminpassword" required />
-          <span class="position-absolute end-0 top-30" style="padding-right: 10px;">
-            <i class="fa" [ngClass]="{'fa-eye-slash': hidePassword, 'fa-eye': !hidePassword}"
-              (click)="togglePasswordVisibility()"></i>
-          </span>
-        </mat-form-field>
-        <div class="mx-auto text-center my-3">
-          <table>
-            <tr>
-              <td><label>Select Profile:</label></td>
-
-              <td class="checkbox-group ps-2 pt-1">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" id="option1" name="options" formControlName="options"
-                    value="2" />
-                  <label class="form-check-label" for="option1">Super Admin</label>
-                </div>
-              </td>
-
-              <td class="checkbox-group ps-2 pt-1">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" id="option1" name="options" formControlName="options"
-                    value="1" />
-                  <label class="form-check-label" for="option1">Admin</label>
-                </div>
-              </td>
-            </tr>
-          </table>
+          <!-- <p class="mail">admin@gmail.com</p> src="https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png"-->
         </div>
-        <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center" fxLayoutGap="25px">
-          <div class="mx-auto text-center"><br>
-            <button type="submit" class="btn btn-primary" (click)="login()">
-              <b>Login</b>
-            </button>
-          </div><br>
-          <!-- <a routerLink="/register" mat-raised-button color="accent"
+      </mat-card-title>
+      <mat-card-content>
+        <h2>Login</h2>
+        <form class="example-form" [formGroup]="loginform">
+          <mat-form-field class="example-full-width pt-4">
+            <!-- <mat-label>Admin Name</mat-label> -->
+            <mat-icon matPrefix class="custom-icon">person</mat-icon>
+            <input matInput placeholder="Admin name" id="adminname" formControlName="adminname" required />
+          </mat-form-field>
+          <mat-form-field class="example-full-width pt-3 position-relative">
+            <mat-icon matPrefix class="custom-icon">lock</mat-icon>
+            <input matInput placeholder="Password" id="adminpassword" type="{{ hidePassword ? 'password' : 'text' }}"
+              formControlName="adminpassword" required />
+            <span class="position-absolute end-0 top-30" style="padding-right: 10px;">
+              <i class="fa" [ngClass]="{'fa-eye-slash': hidePassword, 'fa-eye': !hidePassword}"
+                (click)="togglePasswordVisibility()"></i>
+            </span>
+          </mat-form-field>
+          <div class="mx-auto text-center my-3">
+            <table>
+              <tr>
+                <td><label>Select Profile:</label></td>
+
+                <td class="checkbox-group ps-2 pt-1">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="option1" name="options" formControlName="options"
+                      value="2" />
+                    <label class="form-check-label" for="option1">Super Admin</label>
+                  </div>
+                </td>
+
+                <td class="checkbox-group ps-2 pt-1">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="option1" name="options" formControlName="options"
+                      value="1" />
+                    <label class="form-check-label" for="option1">Admin</label>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center" fxLayoutGap="25px">
+            <div class="mx-auto text-center"><br>
+              <button type="submit" class="btn btn-primary" (click)="login()">
+                <b>Login</b>
+              </button>
+            </div><br>
+            <!-- <a routerLink="/register" mat-raised-button color="accent"
             >Back to Register</a
           > -->
-        </div>
-      </form>
-    </mat-card-content>
-  </mat-card>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

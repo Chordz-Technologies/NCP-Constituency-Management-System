@@ -19,6 +19,11 @@
             <td mat-cell *matCellDef="let element">{{ element.k_area }}</td>
         </ng-container>
 
+        <ng-container matColumnDef="message_for">
+            <th mat-header-cell *matHeaderCellDef><b>Reasons</b></th>
+            <td mat-cell *matCellDef="let element">{{ element.message_for }}</td>
+        </ng-container>
+
         <ng-container matColumnDef="k_message">
             <th mat-header-cell *matHeaderCellDef><b>Message</b></th>
             <td mat-cell *matCellDef="let element">{{ element.k_message }}</td>

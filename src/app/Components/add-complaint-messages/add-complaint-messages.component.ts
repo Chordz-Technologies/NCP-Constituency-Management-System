@@ -11,6 +11,10 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class AddComplaintMessagesComponent {
   complaintForm!: FormGroup;
+  options = [
+    { name: 'Political', value: 'Political' }, { name: 'Health', value: 'Health' }, { name: 'Educational', value: 'Educational' },
+    { name: 'Environmental', value: 'Environmental' }, { name: 'Social', value: 'Social' }
+  ];
 
   constructor(private service: ServiceService, private fb: FormBuilder, private toastr: ToastrService, private router: Router) { }
 
@@ -18,6 +22,7 @@ export class AddComplaintMessagesComponent {
     this.complaintForm = this.fb.group({
       k_name: [''],
       k_area: [''],
+      k_reasons: [''],
       k_message: ['']
     })
   }
@@ -26,12 +31,13 @@ export class AddComplaintMessagesComponent {
     const complaintFormData = {
       k_name: this.complaintForm.value.k_name,
       k_area: this.complaintForm.value.k_area,
+      message_for: this.complaintForm.value.k_reasons,
       k_message: this.complaintForm.value.k_message,
     }
 
     let postData = { ...complaintFormData };
 
-    if (!postData.k_name || !postData.k_area || !postData.k_message) {
+    if (!postData.k_name || !postData.k_area || !postData.message_for || !postData.k_message) {
       this.toastr.error('Please fill all the fields.', 'Error');
       return;
     }

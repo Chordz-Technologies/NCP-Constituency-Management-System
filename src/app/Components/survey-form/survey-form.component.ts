@@ -84,7 +84,7 @@ export class SurveyFormComponent implements OnInit {
   saveLocation() {
     navigator.geolocation.getCurrentPosition((position) => {
       this.currentLocationLink = `https://www.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}`;
-      this.dynamicForm.get('q25')?.setValue(`https://www.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}`);
+      this.dynamicForm.get('q21')?.setValue(`https://www.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}`);
     }, (error) => {
       console.error('Error getting current position:', error);
     });

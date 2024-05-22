@@ -24,14 +24,10 @@ export class IndapurMapComponent {
   regionData: any; // Variable to store region data
   isModalOpen = false; // Flag to track if modal is open or not
 
-  constructor(private http: HttpClient, private modalService: NgbModal, private dataService: ServiceService, private router: Router) {
-
-
-  }
+  constructor(private http: HttpClient, private modalService: NgbModal, private dataService: ServiceService, private router: Router) {}
 
   ngOnInit() {
     this.fetchSvgInfo();
-
   }
 
   fetchSvgInfo() {

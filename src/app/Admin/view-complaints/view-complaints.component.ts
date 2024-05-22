@@ -13,7 +13,7 @@ import { ServiceService } from 'src/app/Service/service.service';
 export class ViewComplaintsComponent {
   public dataLoaded: boolean = false;
 
-  displayedColumns: string[] = ['k_id','k_name', 'k_area', 'k_message'];
+  displayedColumns: string[] = ['k_id','k_name', 'k_area', 'message_for', 'k_message'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
