@@ -226,4 +226,8 @@ export class ServiceService {
   karykartaPdfReport(): Observable<Blob> {
     return this.http.get(`${this.url}/generate-pdf-report/`, { responseType: 'blob' });
   }
+
+  surveyExcelReport(): Observable<Blob> {
+    return this.http.get(`${this.url}/surevyexcelreport/`, { responseType: 'blob' });
+  }
 }
