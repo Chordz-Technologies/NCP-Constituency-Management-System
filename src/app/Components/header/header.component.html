@@ -1,9 +1,9 @@
 <div class="container pt-2 pb-1">
   <div class="row align-items-center">
-    <div class="lang col-lg-6 col-md-6 col-sm-8">
+    <div class="lang col-lg-6 col-md-6 col-sm-5">
       <div id="google_translate_element"></div>
     </div>
-    <div class="icon-container col-lg-6 col-md-6 col-sm-4 d-flex justify-content-end">
+    <div class="icon-container col-lg-6 col-md-6 col-sm-7 d-flex justify-content-end">
       <div class="circle">
         <button mat-icon-button routerLink="/notifications">
           <mat-icon>notifications_none</mat-icon>
@@ -40,7 +40,8 @@
             [routerLinkActiveOptions]="{ exact: true }" (click)="isNavbarCollapsed = true"><b>Home</b></a>
         </li>
         <li class="nav-item dropdown" ngbDropdown>
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
             <b>Select Constituency </b>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>

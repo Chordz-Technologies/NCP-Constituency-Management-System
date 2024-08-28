@@ -217,7 +217,7 @@ export class ServiceService {
     return this.http.get<any>(`${this.url}/allfeedbacks/`);
   }
 
-   // Reports
+  // Reports
 
   karykartaExcelReport(): Observable<Blob> {
     return this.http.get(`${this.url}/generate-excel-report/`, { responseType: 'blob' });

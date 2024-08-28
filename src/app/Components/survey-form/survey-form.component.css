@@ -13,25 +13,51 @@
   padding: 10px 20px;
   font-weight: 700;
   width: 50%;
+  /* Responsive width for larger screens */
   margin: 20px 0;
 }
 
 .card {
-  margin: 0 200px 0 200px;
+  margin: 0 200px;
+  /* Larger margins for wider screens */
   padding: 50px;
+  /* More padding for larger screens */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
 }
 
 textarea {
   border: 1px solid rgb(226, 224, 224);
+  width: 100%;
+  /* Ensure textarea takes full width of its container */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    margin: 0 50px;
+    /* Reduce margins for medium-sized screens */
+    padding: 30px;
+    /* Adjust padding for medium-sized screens */
+  }
+
+  .btn {
+    width: 70%;
+    /* Adjust button width for medium-sized screens */
+  }
 }
 
 @media screen and (max-width: 600px) {
   .card {
-    margin: 0 5px 0 5px;
+    margin: 0 5px;
+    /* Minimal margins for small screens */
     padding: 15px;
+    /* Adjust padding for small screens */
   }
 
-  textarea {
+  .btn {
     width: 100%;
+    /* Full width button for small screens */
   }
 }

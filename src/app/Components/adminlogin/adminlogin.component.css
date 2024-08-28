@@ -1,16 +1,25 @@
 .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Ensure the parent container takes full viewport height */
     background-position: center center;
-    background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(src/assets/ncp-bg.jpg);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(src/assets/ncp-bg.jpg);
     background-size: cover;
 }
 
 mat-card {
-    margin: 0 300px 0 300px;
+    margin: 0 auto;
+    /* Center the card horizontally */
     padding: 20px;
+    max-width: 80%;
+    /* Ensure the card does not exceed 80% of the viewport width */
+    box-sizing: border-box;
 }
 
 img {
-    margin-right: 45px;
+    /* margin-right: 45px; */
     width: 120px;
     height: 120px;
 }
@@ -39,7 +48,7 @@ mat-card-content {
 
 .btn {
     width: 30%;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 20px;
     background: #2E3192;
 }
 
@@ -54,12 +63,41 @@ mat-card-content {
 }
 
 @media screen and (max-width: 600px) {
-    .card {
-        margin: 0 5px 0 5px;
+    mat-card {
+        margin: 0 35px;
+        /* Reduce the margin for smaller screens */
         padding: 15px;
     }
 
     .btn {
         width: 60%;
+        /* Increase the button width for smaller screens */
     }
+
+    img {
+        margin-right: 0;
+        /* Adjust image margin for smaller screens */
+        width: 80px;
+        /* Adjust image size for smaller screens */
+        height: 80px;
+    }
+
+    mat-card-title {
+        font-size: 20px;
+        /* Adjust title font size for smaller screens */
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    mat-card {
+        margin: 0 50px;
+        /* Adjust the margin for medium screens */
+        padding: 20px;
+    }
+
+    .btn {
+        width: 50%;
+        /* Adjust the button width for medium screens */
+    }
+    
 }

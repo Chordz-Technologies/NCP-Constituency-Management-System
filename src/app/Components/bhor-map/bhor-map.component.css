@@ -33,3 +33,40 @@ svg path:hover {
     width: 100%;
     max-width: 100%;
 }
+
+.color-div {
+    background: white;
+    width: 250px;
+    margin-left: 10px;
+}
+
+.indicator {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
