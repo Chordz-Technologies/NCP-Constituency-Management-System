@@ -17,22 +17,18 @@ export class KhadakwaslaMapComponent {
   percentage: number = 0;
   pathColor: any[] = [];
   svgInfo: any[] = [];
-
   showModal: boolean = false;
-
   votingPercentages: number[] = [];
   villageData: any;
+  villageDetails: any[] = [];
+  displayedColumns: string[] = ['field', 'value'];
   regionData: any; // Variable to store region data
   isModalOpen = false; // Flag to track if modal is open or not
 
-  constructor(private http: HttpClient, private modalService: NgbModal, private dataService: ServiceService, private router: Router) {
-
-
-  }
+  constructor(private http: HttpClient, private modalService: NgbModal, private dataService: ServiceService, private router: Router) {}
 
   ngOnInit() {
     this.fetchSvgInfo();
-
   }
 
   fetchSvgInfo() {
@@ -67,6 +63,22 @@ export class KhadakwaslaMapComponent {
     this.http.get<any>(`${this.url}/kvillagedetails/${regionId}/`)
       .subscribe(data => {
         this.villageData = data.village_data;
+
+        // Populate the villageDetails array with field-value pairs
+        this.villageDetails = [
+          { field: 'Village Name', value: this.villageData.villagename },
+          { field: 'Total Voters', value: this.villageData.totalvoters },
+          { field: 'Male', value: this.villageData.malevoters },
+          { field: 'Female', value: this.villageData.femalevoters },
+          { field: 'Others', value: this.villageData.othervoters },
+          { field: 'Voting Percentage', value: `${this.villageData.votingpercentage} %` },
+          { field: 'Ruling Party', value: this.villageData.rulingparty },
+          { field: 'Reason', value: this.villageData.reason },
+          { field: 'Hindu Voters', value: this.villageData.hindu },
+          { field: 'Muslim Voters', value: this.villageData.muslim },
+          { field: 'Buddhist Voters', value: this.villageData.buddhist },
+        ];
+
         this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
           (result) => {
             console.log(`Closed with: ${result}`);
@@ -75,9 +87,8 @@ export class KhadakwaslaMapComponent {
             console.log(`Dismissed: ${reason}`);
           }
         );
-        (error: any) => {
-          console.error('Error fetching village data:', error);
-        }
+      }, (error: any) => {
+        console.error('Error fetching village data:', error);
       });
   }
 

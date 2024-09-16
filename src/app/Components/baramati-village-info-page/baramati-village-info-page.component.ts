@@ -13,7 +13,6 @@ Chart.register(...registerables);
 })
 export class BaramatiVillageInfoPageComponent implements OnInit {
   private url = environment.apiUrl;
-  villageData: any;
   boothLeaderDataSource = new MatTableDataSource<any>();
   displayedColumns = ['totalBooths', 'boothLeaderName', 'boothLeader1', 'boothLeader2', 'boothLeaderAddress'];
 
@@ -28,6 +27,9 @@ export class BaramatiVillageInfoPageComponent implements OnInit {
 
   surnameDataSource = new MatTableDataSource<any>();
   displayedColumns4 = ['Surname'];
+
+  villageData: any = null; 
+  displayedColumns5: string[] = ['villagename', 'totalvoters', 'winner_votes', 'runnerup_votes', 'malevoters', 'femalevoters', 'othervoters', 'votingpercentage', 'reason', 'causes', 'boothleader_name', 'total_booths', 'rulingparty'];
 
   pieChart: any;
 

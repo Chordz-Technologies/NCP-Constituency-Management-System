@@ -37497,28 +37497,27 @@ gg==" transform="matrix(0.24 0 0 0.24 0 0)"></image>
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body p-5">
-    <div *ngIf="villageData">
-      <p><strong>Village Name:</strong> {{ villageData.villagename }}</p>
-      <p><strong>Total Voters:</strong> {{ villageData.totalvoters }}</p>
-      <p><strong>Male:</strong> {{ villageData.malevoters }}</p>
-      <p><strong>Female:</strong> {{ villageData.femalevoters }}</p>
-      <p><strong>Others:</strong> {{ villageData.othervoters }}</p>
-      <p>
-        <strong>Voting Percentage:</strong> {{ villageData.votingpercentage }} %
-      </p>
-      <p><strong>Ruling party:</strong> {{ villageData.rulingparty }}</p>
-      <p><strong>Reason:</strong> {{ villageData.reason }}</p>
-      <h3>Religion wise Voters</h3>
-      <p><strong>Hindu:</strong> {{ villageData.hindu }}</p>
-      <p><strong>Muslim:</strong> {{ villageData.muslim }}</p>
-      <p><strong>Buddhist:</strong> {{ villageData.buddhist }}</p>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="navigateToVillageDetails(modal)">
-          Read More
-        </button>
-      </div>
-    </div>
+  <div class="modal-body p-2">
+    <table mat-table [dataSource]="villageDetails" class="mat-elevation-z8">
+      <ng-container matColumnDef="field">
+        <th mat-header-cell *matHeaderCellDef> Field </th>
+        <td mat-cell *matCellDef="let element"> {{ element.field }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef> Value </th>
+        <td mat-cell *matCellDef="let element"> {{ element.value }} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="navigateToVillageDetails(modal)">
+      Read More
+    </button>
   </div>
 </ng-template>

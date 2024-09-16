@@ -13,7 +13,6 @@ Chart.register(...registerables);
 })
 export class PurandarVillageInfoPageComponent {
   private url = environment.apiUrl;
-  villageData: any;
   boothLeaderDataSource = new MatTableDataSource<any>();
   displayedColumns = ['totalBooths', 'boothLeaderName', 'boothLeader1', 'boothLeader2', 'boothLeaderAddress'];
 
@@ -29,6 +28,9 @@ export class PurandarVillageInfoPageComponent {
   surnameDataSource = new MatTableDataSource<any>();
   displayedColumns4 = ['Surname'];
 
+  villageData: any = null; 
+  displayedColumns5: string[] = ['villagename', 'totalvoters', 'winner_votes', 'runnerup_votes', 'malevoters', 'femalevoters', 'othervoters', 'votingpercentage', 'reason', 'causes', 'boothleader_name', 'total_booths', 'rulingparty'];
+
   pieChart: any;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
@@ -41,7 +43,7 @@ export class PurandarVillageInfoPageComponent {
     const villageId = this.route.snapshot.paramMap.get('id');
     // Fetch village data from the API based on the villageId
     this.http.get<any>(`${this.url}/purandarvillagedetails/${villageId}/`)
-      .subscribe(data => {
+      .subscribe((data: any) => {
         this.villageData = data.village_data;
         this.populateDataSources();
         this.createPieChart();

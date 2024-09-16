@@ -13,7 +13,6 @@ Chart.register(...registerables);
 })
 export class BhorVillageInfoPageComponent {
   private url = environment.apiUrl;
-  villageData: any;
   boothLeaderDataSource = new MatTableDataSource<any>();
   displayedColumns = ['totalBooths', 'boothLeaderName', 'boothLeader1', 'boothLeader2', 'boothLeaderAddress'];
 
@@ -29,6 +28,9 @@ export class BhorVillageInfoPageComponent {
   surnameDataSource = new MatTableDataSource<any>();
   displayedColumns4 = ['Surname'];
 
+  villageData: any = null; 
+  displayedColumns5: string[] = ['villagename', 'totalvoters', 'winner_votes', 'runnerup_votes', 'malevoters', 'femalevoters', 'othervoters', 'votingpercentage', 'reason', 'causes', 'boothleader_name', 'total_booths', 'rulingparty'];
+
   pieChart: any;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
@@ -40,7 +42,7 @@ export class BhorVillageInfoPageComponent {
   fetchBhorVillagebyID() {
     const villageId = this.route.snapshot.paramMap.get('id');
     this.http.get<any>(`${this.url}/bhorvillagedetails/${villageId}/`)
-      .subscribe(data => {
+      .subscribe((data: any) => {
         this.villageData = data.village_data;
         this.populateDataSources();
         this.createPieChart();
@@ -95,7 +97,6 @@ export class BhorVillageInfoPageComponent {
   }
 
   populateDataSources() {
-
     const boothLeaderData = [{
       'total_booths': this.villageData.total_booths,
       'boothleader_name': this.villageData.boothleader_name,
