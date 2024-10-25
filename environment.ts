@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'http://baramatiapi.beatsacademy.in',
+    apiUrl: 'https://baramatiapi.beatsacademy.in',
 };
